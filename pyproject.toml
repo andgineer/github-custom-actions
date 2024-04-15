@@ -1,0 +1,41 @@
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-custom-actions"
+dynamic = [ "version",]
+description = "Python package for creating custom GitHub Actions."
+keywords = [ "one", "two", ]
+classifiers = [ "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent",]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+[[project.authors]]
+name = "Andrey Sorokin"
+email = "andrey@sorokin.engineer"
+
+[project.license]
+file = "LICENSE.txt"
+
+[project.urls]
+Homepage = "https://andgineer.github.io/github-custom-actions/"
+Documentation = "https://andgineer.github.io/github-custom-actions/"
+
+[tool.setuptools]
+packages = "find:"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.manifest]
+include = [ "README.md", "LICENSE.txt",]
+
+[tool.ruff]
+line-length = 99
+
+[tool.hatch.version]
+path = "src/github_custom_actions/__about__.py"
+
+#[project.scripts]
+#github-custom-actions = "github_custom_actions.main:github_custom_actions"

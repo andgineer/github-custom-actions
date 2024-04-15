@@ -1,0 +1,12 @@
+[FORMAT]
+max-line-length=120
+
+[MESSAGES CONTROL]
+# globally disable pylint checks (comma separated)
+disable=
+    fixme,
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    R0903,  # too-few-public-methods
+    W0718,  # broad-exception-caught
+
