@@ -5,8 +5,8 @@
 | Name                                           |    Stmts |     Miss |  Cover |   Missing |
 |----------------------------------------------- | -------: | -------: | -----: | --------: |
 | src/github\_custom\_actions/\_\_about\_\_.py   |        1 |        0 |   100% |           |
-| src/github\_custom\_actions/inputs\_outputs.py |       51 |       51 |     0% |     3-102 |
-|                                      **TOTAL** |   **52** |   **51** | **2%** |           |
+| src/github\_custom\_actions/inputs\_outputs.py |       52 |       52 |     0% |     3-107 |
+|                                      **TOTAL** |   **53** |   **52** | **2%** |           |
 
 
 ## Setup coverage badge
