@@ -4,6 +4,7 @@ exclude: |
         site/|
         docs/|
         tasks.py|
+        scripts/|
         __about__.py
     )
 repos:

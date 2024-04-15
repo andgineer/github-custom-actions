@@ -16,7 +16,7 @@ permissions:
 jobs:
   publish:
     env:
-      PRIMARY_PYTHON_VERSION: '3.12'
+      PRIMARY_PYTHON_VERSION: '3.7'
     runs-on: ubuntu-latest
 
     steps:

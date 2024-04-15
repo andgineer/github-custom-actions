@@ -2,7 +2,7 @@
 [![Coverage](https://raw.githubusercontent.com/andgineer/github-custom-actions/python-coverage-comment-action-data/badge.svg)](https://htmlpreview.github.io/?https://github.com/andgineer/github-custom-actions/blob/python-coverage-comment-action-data/htmlcov/index.html)
 # github-custom-actions
 
-Python package for creating custom GitHub Actions. 
+Python package for creating [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions). 
 
 # Documentation
 

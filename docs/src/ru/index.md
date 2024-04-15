@@ -1,6 +1,11 @@
 # github-custom-actions
 
-Python package for creating custom GitHub Actions.
+Библиотека упрощающая создание
+[custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions).
+
+Поддерживает Python 3.7 и выше для древних self-hosted action runners.
+
+- [Пример использования](https://github.com/andgineer/allure-report)
 
 ## Установка
 
