@@ -1,18 +1,18 @@
 from pathlib import Path
 
-from github_custom_actions.inputs_outputs import OutputProxy, InputProxy
+from github_custom_actions.inputs_outputs import ActionOutputs, ActionInputs
 
 
 class ActionBase:
     @property
-    def output(self) -> OutputProxy:
+    def output(self) -> ActionOutputs:
         """Get Action Output."""
-        return OutputProxy()
+        return ActionOutputs()
 
     @property
-    def input(self) -> InputProxy:
+    def input(self) -> ActionInputs:
         """Get Action Input."""
-        return InputProxy()
+        return ActionInputs()
 
     def get_input_path(self, name: str) -> Path:
         """Get Action Input value as Path."""
