@@ -2,11 +2,12 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/andgineer/github-custom-actions/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                                           |    Stmts |     Miss |  Cover |   Missing |
-|----------------------------------------------- | -------: | -------: | -----: | --------: |
-| src/github\_custom\_actions/\_\_about\_\_.py   |        1 |        0 |   100% |           |
-| src/github\_custom\_actions/inputs\_outputs.py |       52 |       52 |     0% |     3-107 |
-|                                      **TOTAL** |   **53** |   **52** | **2%** |           |
+| Name                                           |    Stmts |     Miss |   Cover |   Missing |
+|----------------------------------------------- | -------: | -------: | ------: | --------: |
+| src/github\_custom\_actions/\_\_about\_\_.py   |        1 |        0 |    100% |           |
+| src/github\_custom\_actions/action\_base.py    |       14 |        4 |     71% |     19-22 |
+| src/github\_custom\_actions/inputs\_outputs.py |       54 |       13 |     76% |36-42, 45, 48-49, 76, 83-84, 87, 90, 93, 101 |
+|                                      **TOTAL** |   **69** |   **17** | **75%** |           |
 
 
 ## Setup coverage badge
