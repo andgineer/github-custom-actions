@@ -29,3 +29,9 @@ def test_github_vars_path_variable(monkeypatch):
     vars = GithubVars()
     monkeypatch.setenv("GITHUB_OUTPUT", "a/b")
     assert str(vars.github_output.parent) == "a"
+
+
+def test_github_vars_empty_path(monkeypatch):
+    vars = GithubVars()
+    monkeypatch.setenv("GITHUB_OUTPUT", "")
+    assert vars.github_output is None

@@ -1,4 +1,4 @@
-# github-custom-actions
+# Installation
 
 Python package for creating [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions). 
 

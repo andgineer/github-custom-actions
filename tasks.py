@@ -24,7 +24,7 @@ ALLOWED_VERSION_TYPES = ["release", "bug", "feature"]
 @task
 def version(c: Context):
     """Show the current version."""
-    with open("src/bitwarden_import_msecure/__about__.py", "r") as f:
+    with open("src/github-custom-actions/__about__.py", "r") as f:
         version_line = f.readline()
         version_num = version_line.split('"')[1]
         print(version_num)
@@ -63,7 +63,7 @@ def docs_task_factory(language: str):
     @task
     def docs(c: Context):
         """Docs preview for the language specified."""
-        c.run("open -a 'Google Chrome' http://127.0.0.1:8000/bitwarden-import-msecure/")
+        c.run("open -a 'Google Chrome' http://127.0.0.1:8000/github-custom-actions/")
         c.run(f"scripts/docs-render-config.sh {language}")
         c.run("mkdocs serve -f docs/_mkdocs.yml")
 

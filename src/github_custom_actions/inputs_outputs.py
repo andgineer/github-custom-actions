@@ -18,9 +18,10 @@ class DocumentedEnvVars:
 
     Lazy load attributes from environment variables.
     Only described attributes are loaded.
-    Attributes with type Path converted accordingly.
+    Attributes with type Path converted accordingly, it the value is "" set to None.
     """
 
+    # todo: should be readonly
     _type_hints_cache: Dict[str, Dict[str, Any]] = {}
 
     @classmethod
@@ -36,64 +37,39 @@ class DocumentedEnvVars:
 
     def __getattribute__(self, name: str) -> Any:
         try:
-            return object.__getattribute__(self, name)
+            return super().__getattribute__(name)
         except AttributeError as exc:
             type_hints = self.__class__._get_type_hints()
             if name not in type_hints:
                 raise AttributeError(f"Unknown {name}") from exc
             env_var_name = self.attribute_to_env_var(name)
             if env_var_name in os.environ:
-                value: Union[str, Path] = os.environ[env_var_name]
+                value: Optional[Union[str, Path]] = os.environ[env_var_name]
 
                 # If the type hint is Path, convert the value to Path
                 if type_hints[name] is Path:
-                    value = Path(value)
+                    value = Path(value) if value else None
                 self.__dict__[name] = value
                 return value
             raise
 
 
-class ActionInputs(MutableMapping):  # type: ignore
+class ActionInputs(DocumentedEnvVars):  # pylint: disable=too-few-public-methods
     """GitHub Action input variables.
 
     Usage:
         class MyAction:
             @property
-            def input(self):
+            def inputs(self):
                 return InputProxy()
 
         action = MyAction()
-        print(action.input["my-input"])
+        # to get action input `my-input` from environment var `INPUT_MY-INPUT`
+        print(action.inputs.my_input)
     """
 
-    def __init__(self) -> None:
-        self._input_keys: Union[List[str], None] = None
-
-    def __getitem__(self, name: str) -> str:
-        # Do not use
-        return os.environ[f"INPUT_{name.upper()}"]
-
-    def __iter__(self) -> Iterator[str]:
-        if self._input_keys is None:
-            self._input_keys = [
-                key[len(INPUT_PREFIX) :].lower()
-                for key in os.environ
-                if key.startswith(INPUT_PREFIX)
-            ]
-        return iter(self._input_keys)
-
-    def __len__(self) -> int:
-        return sum(1 for _ in self.__iter__())
-
-    def __contains__(self, key: object) -> bool:
-        assert isinstance(key, str)
-        return f"{INPUT_PREFIX}{key.upper()}" in os.environ
-
-    def __setitem__(self, name: str, value: str) -> None:
-        raise ValueError("The input property is read-only.")
-
-    def __delitem__(self, key: str) -> None:
-        raise ValueError("The input property is read-only.")
+    def attribute_to_env_var(self, name: str) -> str:
+        return INPUT_PREFIX + name.upper().replace("_", "-")
 
 
 class ActionOutputs(MutableMapping):  # type: ignore

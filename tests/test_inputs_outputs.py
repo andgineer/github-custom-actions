@@ -4,12 +4,14 @@ from pathlib import Path
 from github_custom_actions.action_base import ActionBase
 import pytest
 
+from github_custom_actions.inputs_outputs import ActionInputs
+
 
 @pytest.fixture
 def inputs():
     input_env = {
-        "INPUT_MY_INPUT": "value1",
-        "INPUT_ANOTHER_INPUT": "value2"
+        "INPUT_MY-INPUT": "value1",
+        "INPUT_ANOTHER-INPUT": "value2"
     }
     with patch.dict('os.environ', input_env):
         yield
@@ -26,27 +28,38 @@ def outputs():
             yield github_output
 
 
-def test_input_proxy_retrieval(inputs, outputs):
+class Inputs(ActionInputs):
+    my_input: str
+    another_input: str
+
+
+@pytest.fixture(scope="function")
+def action(inputs, outputs):
+    return ActionBase(inputs=Inputs())
+
+
+def test_input_retrieval(action):
     """Test retrieval of input values."""
-    action = ActionBase()
-    assert action.input["my_input"] == "value1"
-    assert action.input["another_input"] == "value2"
+    assert action.inputs.my_input == "value1"
+    assert action.inputs.another_input == "value2"
 
 
-def test_output_proxy_set_and_get(inputs, outputs):
+def test_output_set_and_get(inputs, outputs):
     """Test setting and getting output values."""
     action = ActionBase()
-    action.output["my_output"] = "output_value"
+    action.outputs["my_output"] = "output_value"
 
     assert outputs.read_text() == "my_output=output_value"
 
 
-def test_input_proxy_immutable(inputs, outputs):
-    """Test that input proxy does not allow setting or deleting items."""
-    action = ActionBase()
-    with pytest.raises(ValueError):
-        action.input["my_input"] = "new_value"
+def test_input_caching(action, monkeypatch):
+    """Test that input is loaded from env var only once."""
+    monkeypatch.delenv("INPUT_MY-INPUT")
+    with pytest.raises(AttributeError):
+        assert action.inputs.my_input == "value1"
 
-    with pytest.raises(ValueError):
-        del action.input["my_input"]
+    monkeypatch.setenv("INPUT_MY-INPUT", "value1")
+    assert action.inputs.my_input == "value1"
 
+    monkeypatch.delenv("INPUT_MY-INPUT")
+    assert action.inputs.my_input == "value1"  # from cache
