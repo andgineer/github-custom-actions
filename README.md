@@ -25,6 +25,9 @@ class MyAction(ActionBase):
     def main(self):
         self.inputs.my_path.mkdir(exist_ok=True)
         self.outputs["RUNNER_OS"] = self.vars.runner_os
+
+if __name__ == "__main__":
+    MyAction().run()
 ```
 # Documentation
 
