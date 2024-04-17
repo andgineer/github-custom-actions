@@ -13,7 +13,7 @@ INPUT_PREFIX = "INPUT_"
 
 
 class ActionInputs(MutableMapping):  # type: ignore
-    """Proxy for GitHub Actions input variables.
+    """GitHub Action input variables.
 
     Usage:
         class MyAction:
@@ -56,7 +56,7 @@ class ActionInputs(MutableMapping):  # type: ignore
 
 
 class ActionOutputs(MutableMapping):  # type: ignore
-    """Proxy for GitHub Actions output variables.
+    """GitHub Actions output variables.
 
     Usage:
         class MyAction:

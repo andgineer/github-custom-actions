@@ -1,9 +1,12 @@
 from pathlib import Path
 
 from github_custom_actions.inputs_outputs import ActionOutputs, ActionInputs
+from github_custom_actions.github_vars import GithubVars
 
 
 class ActionBase:
+    """Base class for GitHub Actions."""
+
     @property
     def output(self) -> ActionOutputs:
         """Get Action Output."""
@@ -20,3 +23,7 @@ class ActionBase:
         if not path_str:
             raise ValueError(f"Parameter `{name}` cannot be empty.")
         return Path(path_str)
+
+    @property
+    def vars(self):
+        return GithubVars()
