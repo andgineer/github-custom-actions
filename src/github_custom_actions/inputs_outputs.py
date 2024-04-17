@@ -40,7 +40,7 @@ class DocumentedEnvVars:
         except AttributeError as exc:
             type_hints = self.__class__._get_type_hints()
             if name not in type_hints:
-                raise AttributeError(f"Undefined {name}") from exc
+                raise AttributeError(f"Unknown {name}") from exc
             env_var_name = self.attribute_to_env_var(name)
             if env_var_name in os.environ:
                 value: Union[str, Path] = os.environ[env_var_name]
