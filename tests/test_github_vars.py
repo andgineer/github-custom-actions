@@ -9,6 +9,6 @@ def test_lazy_load():
     with pytest.raises(AttributeError):
         vars.github_repository
     os.environ["GITHUB_REPOSITORY"] = "test"
-    assert vars.repository == "test"
+    assert vars.github_repository == "test"
     del os.environ["GITHUB_REPOSITORY"]
-    assert vars.repository == "test"  # Cached value
+    assert vars.github_repository == "test"  # Cached value
