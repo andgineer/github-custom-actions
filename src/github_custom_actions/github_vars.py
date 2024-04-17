@@ -1,8 +1,9 @@
-import os
-from typing import Any
+from pathlib import Path
+
+from github_custom_actions.inputs_outputs import DocumentedEnvVars
 
 
-class GithubVars:
+class GithubVars(DocumentedEnvVars):
     """GitHub Action environment variables.
 
     https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
@@ -19,6 +20,9 @@ class GithubVars:
     Thanks to the docstrings your IDE will provide you with doc hints when you hover over the property.
     We do not load the attributes on the class init but do it Lazily.
     Once read, the value is stored in the instance dictionary and is not extracted from env anymore.
+
+    Only described Github vars are loaded.
+    Paths and files have type Path.
     """
 
     CI: str
@@ -33,7 +37,7 @@ class GithubVars:
     example, the first script you run will have the name __run, and the second script will be
     named __run_2. Similarly, the second invocation of actions/checkout will be actionscheckout2."""
 
-    github_action_path: str
+    github_action_path: Path
     """The path where an action is located. This property is only supported in composite actions.
     You can use this path to change directories to where the action is located and access other
     files in that same repository. For example, /home/runner/work/_actions/repo-owner/name-of-action-repo/v1."""
@@ -70,7 +74,7 @@ class GithubVars:
     github_event_name: str
     """The name of the event that triggered the workflow. For example, workflow_dispatch."""
 
-    github_event_path: str
+    github_event_path: Path
     """The path to the file on the runner that contains the full event webhook payload.
     For example, /github/workflow/event.json."""
 
@@ -85,14 +89,14 @@ class GithubVars:
     github_job: str
     """The job_id of the current job. For example, greeting_job."""
 
-    github_output: str
+    github_output: Path
     """The path on the runner to the file that sets the current step's outputs from workflow commands.
     This file is unique to the current step and changes for each step in a job.
     For example, 
     /home/runner/work/_temp/_runner_file_commands/set_output_a50ef383-b063-46d9-9157-57953fc9f3f0.
     For more information, see "Workflow commands for GitHub Actions"."""
 
-    github_path: str
+    github_path: Path
     """The path on the runner to the file that sets system PATH variables from workflow commands.
     This file is unique to the current step and changes for each step in a job.
     For example, 
@@ -160,7 +164,7 @@ class GithubVars:
     event that triggered the workflow. For more information, see "Events that trigger workflows."
     For example, ffac537e6cbbf934b08745a378932722df287a53."""
 
-    github_step_summary: str
+    github_step_summary: Path
     """The path on the runner to the file that contains job summaries from workflow commands.
     This file is unique to the current step and changes for each step in a job.
     For example, 
@@ -184,7 +188,7 @@ class GithubVars:
     github_workflow_sha: str
     """The commit SHA for the workflow file."""
 
-    github_workspace: str
+    github_workspace: Path
     """The default working directory on the runner for steps, and the default location of your
     repository when using the checkout action. For example, 
     /home/runner/work/my-repo-name/my-repo-name."""
@@ -205,7 +209,7 @@ class GithubVars:
     """The operating system of the runner executing the job. Possible values are Linux, Windows, or macOS.
     For example, Windows"""
 
-    runner_temp: str
+    runner_temp: Path
     """The path to a temporary directory on the runner. This directory is emptied at the beginning
     and end of each job. Note that files will not be removed if the runner's user account does
     not have permission to delete them. For example, D:\\a\\_temp"""
@@ -214,14 +218,3 @@ class GithubVars:
     """The path to the directory containing preinstalled tools for GitHub-hosted runners.
     For more information, see "Using GitHub-hosted runners".
     For example, C:\\hostedtoolcache\\windows"""
-
-    def __getattribute__(self, name: str) -> Any:
-        try:
-            return super().__getattribute__(name)
-        except AttributeError:
-            env_var_name = name.upper()
-            if env_var_name in os.environ:
-                value = os.environ[env_var_name]
-                self.__dict__[name] = value
-                return value
-            raise

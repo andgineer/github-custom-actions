@@ -25,5 +25,6 @@ class ActionBase:
         return Path(path_str)
 
     @property
-    def vars(self):
+    def vars(self) -> GithubVars:
+        """Get GitHub Environment Variables."""
         return GithubVars()
