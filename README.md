@@ -25,6 +25,12 @@ class MyAction(ActionBase):
     def main(self):
         self.inputs.my_path.mkdir(exist_ok=True)
         self.outputs["RUNNER_OS"] = self.vars.runner_os
+        self.summary.text += (
+            self.render(
+                "### {{ inputs.my_input }}.\n"
+                "Have a nice day!"
+            )
+        )
 
 if __name__ == "__main__":
     MyAction().run()

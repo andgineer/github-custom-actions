@@ -1,6 +1,6 @@
-# Quick start
+# Быстрый старт
 
-#### Example of usage
+#### Пример
 
 ```python
 from github_custom_actions import ActionBase, ActionInputs
@@ -24,7 +24,7 @@ class MyAction(ActionBase):
         self.summary.text += (
             self.render(
                 "### {{ inputs.my_input }}.\n"
-                "Have a nice day!"
+                "Приятного дня!"
             )
         )
 
