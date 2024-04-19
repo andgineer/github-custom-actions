@@ -2,13 +2,14 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/andgineer/github-custom-actions/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                                           |    Stmts |     Miss |   Cover |   Missing |
-|----------------------------------------------- | -------: | -------: | ------: | --------: |
-| src/github\_custom\_actions/\_\_about\_\_.py   |        1 |        0 |    100% |           |
-| src/github\_custom\_actions/action\_base.py    |       38 |       12 |     68% |25-26, 32-34, 52, 56-60, 64 |
-| src/github\_custom\_actions/github\_vars.py    |       89 |        0 |    100% |           |
-| src/github\_custom\_actions/inputs\_outputs.py |       64 |        7 |     89% |93, 100-101, 104, 107, 110, 118 |
-|                                      **TOTAL** |  **192** |   **19** | **90%** |           |
+| Name                                                  |    Stmts |     Miss |   Cover |   Missing |
+|------------------------------------------------------ | -------: | -------: | ------: | --------: |
+| src/github\_custom\_actions/\_\_about\_\_.py          |        1 |        0 |    100% |           |
+| src/github\_custom\_actions/action\_base.py           |       38 |       12 |     68% |25-26, 32-34, 52, 56-60, 64 |
+| src/github\_custom\_actions/attr\_dict\_file\_vars.py |       65 |        3 |     95% |105, 108, 119 |
+| src/github\_custom\_actions/github\_vars.py           |       89 |        0 |    100% |           |
+| src/github\_custom\_actions/inputs\_outputs.py        |       64 |        7 |     89% |93, 100-101, 104, 107, 110, 118 |
+|                                             **TOTAL** |  **257** |   **22** | **91%** |           |
 
 
 ## Setup coverage badge
