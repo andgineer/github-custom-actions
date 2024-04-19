@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, Iterator, List, Optional, Any
 
 
-class AttrDictFileVars(MutableMapping):  # type: ignore
+class FileAttrDictVars(MutableMapping):  # type: ignore
     """Dual access vars in a file.
 
     Stored as `key=value` lines in a text file.

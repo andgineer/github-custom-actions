@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, Any
 
 
-class AttrDictFileVars:
+class EnvAttrDictVars:
     """Dual access env vars.
 
     On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
