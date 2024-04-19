@@ -25,7 +25,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyTextFileVars(TextFileVars):
+        class MyTextFileVars(FileAttrDictVars):
             documented_var: str
 
             def __init__(self) -> None:
@@ -41,11 +41,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
     """
 
     def __init__(self, vars_file: Path) -> None:
-        """ "Text files with vars.
-
-        `kebab_names` if True, attribute names on save will use kebab-case.
-        For dict-like access do not convert names.
-        """
+        """Init the vars file."""
         self.vars_file: Path = vars_file
         self._var_keys: Optional[Dict[str, str]] = None
 

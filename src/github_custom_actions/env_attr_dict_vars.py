@@ -28,20 +28,20 @@ class EnvAttrDictVars(AttrDictVars):
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyTextFileVars(TextFileVars):
+        class MyTextFileVars(EnvAttrDictVars):
             documented_var: str
 
             def __init__(self) -> None:
                 super().__init__(Path("my_vars.txt"))
 
         vars = MyTextFileVars()
-        vars["undocumented_var"] = "value1"
-        vars.documented_var == "value2"
-
-        Produce "my_vars.txt" with:
-            documented-var=value1
-            undocumented_var=value2
+        print(vars["undocumented_var"])  # from os.environ["INPUT_UNDOCUMENTED_VAR"]
+        print(vars.documented_var)  # from os.environ["INPUT_DOCUMENTED-VAR"]
     """
+
+    def __init__(self, prefix: str = "INPUT_") -> None:
+        """Init the prefix."""
+        self._external_name_prefix = prefix
 
     def _external_name(self, name: str) -> str:
         """Convert variable name to the external form."""

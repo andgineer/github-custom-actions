@@ -17,12 +17,10 @@ def setup_env_vars():
 
 
 class MyTextFileVars(EnvAttrDictVars):
-    _external_name_prefix = 'INPUT_'
-
     documented_var: str
 
     def __init__(self) -> None:
-        super().__init__()
+        super().__init__('INPUT_')
 
 
 def test_env_attr_dict_vars_attribute_access(setup_env_vars):
