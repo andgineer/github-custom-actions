@@ -15,7 +15,8 @@ class AttrDictFileVars(MutableMapping):  # type: ignore
     Dict-like access possible for any var name - they will be auto-created in the file on first access.
     Attribute access only for explicitly declared vars.
 
-    On attributes access convert camel_case of the attributes names to kebab-case.
+    On attributes access convert camel_case of the attributes names to kebab-case with
+    _attr_to_var_name() method.
     Because this is the only way to express with attributes the names with dash "-".
     Dict-like access does not modify names because for it we can use any style we want.
 
@@ -39,16 +40,18 @@ class AttrDictFileVars(MutableMapping):  # type: ignore
 
     _type_hints_cache: Dict[str, Dict[str, Any]] = {}
 
-    def __init__(self, vars_file: Path, kebab_names: bool = True) -> None:
+    def __init__(self, vars_file: Path) -> None:
         """ "Text files with vars.
 
         `kebab_names` if True, attribute names on save will use kebab-case.
         For dict-like access do not convert names.
         """
         self.vars_file: Path = vars_file
-        self.kebab_names: bool = kebab_names
         self._var_keys: Optional[Dict[str, str]] = None
         self._type_hints_cache: Dict[str, Dict[str, Any]] = {}
+
+    def _attr_to_var_name(self, name: str) -> str:
+        return name.replace("_", "-")
 
     def __getattribute__(self, name: str) -> Any:
         try:
@@ -56,8 +59,9 @@ class AttrDictFileVars(MutableMapping):  # type: ignore
         except AttributeError as exc:
             type_hints = self.__class__._get_type_hints()
             if name in type_hints:
-                value = self[name]
-                self.__dict__[name] = value
+                var_name = self._attr_to_var_name(name)
+                value = self[var_name]
+                self.__dict__[var_name] = value
                 return value
             raise AttributeError(f"Unknown {name}") from exc
 
@@ -91,9 +95,7 @@ class AttrDictFileVars(MutableMapping):  # type: ignore
         """
         type_hints = self.__class__._get_type_hints()
         if name in type_hints and not name.startswith("_"):
-            # if self.kebab_names:
-            #     name = name.replace("_", "-")
-            self[name] = value  # use __setitem__ to save the file
+            self[self._attr_to_var_name(name)] = value
         else:
             super().__setattr__(name, value)
 
