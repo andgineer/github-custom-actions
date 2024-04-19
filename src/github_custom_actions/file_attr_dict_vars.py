@@ -1,10 +1,10 @@
-import typing
 from collections.abc import MutableMapping
 from pathlib import Path
 from typing import Dict, Iterator, List, Optional, Any
+from github_custom_actions.attr_dict_vars import AttrDictVars
 
 
-class FileAttrDictVars(MutableMapping):  # type: ignore
+class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
     """Dual access vars in a file.
 
     Stored as `key=value` lines in a text file.
@@ -12,8 +12,10 @@ class FileAttrDictVars(MutableMapping):  # type: ignore
     They remove / add `_external_name_prefix` to the names.
 
     Access with attributes or as dict.
-    Dict-like access possible for any var name - they will be auto-created in the file on first access.
-    Attribute access only for explicitly declared vars.
+    Dict-like access just add `_external_name_prefix()" and do no other changes in the var name.
+    Attribute access also do `_attr_to_var_name()` - by default it converts python attribute name
+    from snake_case to kebab-case.
+    With attributes you can only access explicitly declared vars.
 
     On attributes access convert camel_case of the attributes names to kebab-case with
     `_attr_to_var_name()` method.
@@ -38,9 +40,6 @@ class FileAttrDictVars(MutableMapping):  # type: ignore
             undocumented_var=value2
     """
 
-    _type_hints_cache: Dict[str, Dict[str, Any]] = {}
-    _external_name_prefix = ""
-
     def __init__(self, vars_file: Path) -> None:
         """ "Text files with vars.
 
@@ -49,10 +48,6 @@ class FileAttrDictVars(MutableMapping):  # type: ignore
         """
         self.vars_file: Path = vars_file
         self._var_keys: Optional[Dict[str, str]] = None
-        self._type_hints_cache: Dict[str, Dict[str, Any]] = {}
-
-    def _attr_to_var_name(self, name: str) -> str:
-        return name.replace("_", "-")
 
     def _external_name(self, name: str) -> str:
         """Convert variable name to the external form."""
@@ -73,13 +68,6 @@ class FileAttrDictVars(MutableMapping):  # type: ignore
                 self.__dict__[var_name] = value
                 return value
             raise AttributeError(f"Unknown {name}") from exc
-
-    @classmethod
-    def _get_type_hints(cls) -> Dict[str, Any]:
-        class_name = cls.__name__
-        if class_name not in cls._type_hints_cache:
-            cls._type_hints_cache[class_name] = typing.get_type_hints(cls)
-        return cls._type_hints_cache[class_name]
 
     def __getitem__(self, key: str) -> str:
         try:

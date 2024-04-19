@@ -1,20 +1,24 @@
 import os
 import typing
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any
+from github_custom_actions.attr_dict_vars import AttrDictVars
 
 
-class EnvAttrDictVars:
+class EnvAttrDictVars(AttrDictVars):
     """Dual access env vars.
 
     On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
     They remove / add `_external_name_prefix` to the names.
 
     Access with attributes or as dict.
-    Dict-like access just add `_external_name_prefix()" and do no other changes in the var name.
-    Attribute access also do `_attr_to_var_name()` - by default it converts python attribute name
+    Dict-like access just do no changes in the var name.
+    Attribute access do `_attr_to_var_name()` - by default it converts python attribute name
     from snake_case to kebab-case.
     With attributes you can only access explicitly declared vars.
+    Both attributes and dict-like access add prefix `_external_name_prefix` and uppercase names before
+    searching in env.
+    So vars["var-name"] and vars.var_name will search for "INPUT_VAR-NAME" in env if the prefix is "INPUT_".
 
     On attributes access convert camel_case of the attributes names to kebab-case with
     `_attr_to_var_name()` method.
@@ -38,20 +42,6 @@ class EnvAttrDictVars:
             documented-var=value1
             undocumented_var=value2
     """
-
-    # todo: should be readonly
-    _type_hints_cache: Dict[str, Dict[str, Any]] = {}
-    _external_name_prefix = ""
-
-    @classmethod
-    def _get_type_hints(cls) -> Dict[str, Any]:
-        # Use cls.__name__ to ensure each subclass uses its own cache entry
-        if cls.__name__ not in cls._type_hints_cache:
-            cls._type_hints_cache[cls.__name__] = typing.get_type_hints(cls)
-        return cls._type_hints_cache[cls.__name__]
-
-    def _attr_to_var_name(self, name: str) -> str:
-        return name.replace("_", "-")
 
     def _external_name(self, name: str) -> str:
         """Convert variable name to the external form."""
