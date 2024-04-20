@@ -7,11 +7,11 @@
 | src/github\_custom\_actions/\_\_about\_\_.py          |        1 |        0 |    100% |           |
 | src/github\_custom\_actions/action\_base.py           |       38 |       12 |     68% |25-26, 32-34, 56, 60-64, 68 |
 | src/github\_custom\_actions/attr\_dict\_vars.py       |       13 |        0 |    100% |           |
-| src/github\_custom\_actions/env\_attr\_dict\_vars.py  |       44 |        9 |     80% |56, 59, 65, 77, 80-84 |
+| src/github\_custom\_actions/env\_attr\_dict\_vars.py  |       44 |        7 |     84% |67, 79, 82-86 |
 | src/github\_custom\_actions/file\_attr\_dict\_vars.py |       64 |        0 |    100% |           |
-| src/github\_custom\_actions/github\_vars.py           |       89 |        0 |    100% |           |
-| src/github\_custom\_actions/inputs\_outputs.py        |       36 |        0 |    100% |           |
-|                                             **TOTAL** |  **285** |   **21** | **93%** |           |
+| src/github\_custom\_actions/github\_vars.py           |       91 |        0 |    100% |           |
+| src/github\_custom\_actions/inputs\_outputs.py        |       11 |        0 |    100% |           |
+|                                             **TOTAL** |  **262** |   **19** | **93%** |           |
 
 
 ## Setup coverage badge
