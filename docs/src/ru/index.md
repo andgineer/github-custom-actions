@@ -45,10 +45,3 @@
 ```bash
 pipx install github-custom-actions
 ```
-
-### Дополнительно
-
-Чтобы увидеть все параметры, используйте: 
-```bash
-github-custom-actions --help
-```

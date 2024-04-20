@@ -43,11 +43,3 @@ In the terminal (command prompt), execute:
 ```bash
 pipx install github-custom-actions
 ```
-
-### Advanced
-
-Use 
-```bash
-github-custom-actions --help
-```
-to see all available options.
