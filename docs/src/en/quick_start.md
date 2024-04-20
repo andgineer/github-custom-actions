@@ -24,7 +24,7 @@ class MyAction(ActionBase):
     def __init__(self):
         super().__init__(inputs=MyInputs(), outputs=MyOutputs())
         if self.inputs.my_path is None:
-            raise ValueError("my_path is required")
+            raise ValueError("my-path is required")
 
     def main(self):
         self.inputs.my_path.mkdir(exist_ok=True)
@@ -49,12 +49,9 @@ from github_custom_actions import ActionBase
 
     
 class MyAction(ActionBase):
-    def __init__(self):
-        super().__init__()
-        if self.inputs.my_path is None:
-            raise ValueError("my_path is required")
-
     def main(self):
+        if self.inputs["my-path"] is None:
+            raise ValueError("my-path is required")
         self.inputs["my-path"].mkdir(exist_ok=True)
         self.outputs["runner-os"] = self.vars.runner_os
         self.summary.text += (
@@ -69,3 +66,6 @@ if __name__ == "__main__":
 ```
 
 Of course in this case you will not have the benefits of the type hints and the documentation, so choose the way that you prefer.
+
+Anyway you have easy access to your action inputs and outputs and to Github environment variables.
+In the example we use [runner_os](https://docs.github.com/en/actions/learn-github-actions/variables) from GitHub environment variables.
