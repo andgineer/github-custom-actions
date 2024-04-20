@@ -1,5 +1,5 @@
 import pytest
-from github_custom_actions.inputs_outputs import ActionInputs
+from github_custom_actions.inputs_outputs import ActionInputs, ActionOutputs
 from github_custom_actions.action_base import ActionBase
 import tempfile
 from unittest.mock import patch
@@ -34,6 +34,10 @@ class Inputs(ActionInputs):
     another_input: str
 
 
+class Outputs(ActionOutputs):
+    my_output: str
+
+
 @pytest.fixture(scope="function")
 def action(inputs, outputs):
-    return ActionBase(inputs=Inputs())
+    return ActionBase(inputs=Inputs(), outputs=Outputs())

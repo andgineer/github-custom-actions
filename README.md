@@ -7,7 +7,7 @@ Python package for creating [custom GitHub Actions](https://docs.github.com/en/a
 #### Example of usage
 
 ```python
-from github_custom_actions import ActionBase, ActionInputs
+from github_custom_actions import ActionBase, ActionInputs, ActionOutputs
 
 class MyInputs(ActionInputs):
     my_input: str
@@ -15,16 +15,22 @@ class MyInputs(ActionInputs):
     
     my_path: Path
     """My path description"""
+    
+    
+class MyOutputs(ActionOutputs):
+    runner_os: str
+    """Runner OS description"""
 
+    
 class MyAction(ActionBase):
     def __init__(self):
-        super().__init__(inputs=MyInputs())
+        super().__init__(inputs=MyInputs(), outputs=MyOutputs())
         if self.inputs.my_path is None:
             raise ValueError("my_path is required")
 
     def main(self):
         self.inputs.my_path.mkdir(exist_ok=True)
-        self.outputs["RUNNER_OS"] = self.vars.runner_os
+        self.outputs.runner_os = self.vars.runner_os
         self.summary.text += (
             self.render(
                 "### {{ inputs.my_input }}.\n"

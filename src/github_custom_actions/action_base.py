@@ -1,6 +1,6 @@
 import sys
 import traceback
-from typing import Any
+from typing import Any, Optional
 
 from jinja2 import Template
 
@@ -40,9 +40,13 @@ class ActionBase:
     Implement main() method in the subclass.
     """
 
-    def __init__(self, inputs: ActionInputs = ActionInputs()):
-        self.inputs = inputs
-        self.outputs = ActionOutputs()
+    def __init__(
+        self, inputs: Optional[ActionInputs] = None, outputs: Optional[ActionOutputs] = None
+    ) -> None:
+        # (!) AttrDictVars() works as dict so empty one is False.
+        # This is why we cannot use usual shorthand "or" here
+        self.inputs = inputs if inputs is not None else ActionInputs()
+        self.outputs = outputs if outputs is not None else ActionOutputs()
         self.vars = GithubVars()
 
     summary = FileTextProperty("github_step_summary")

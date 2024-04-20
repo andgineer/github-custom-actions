@@ -8,39 +8,32 @@ from github_custom_actions.attr_dict_vars import AttrDictVars
 class EnvAttrDictVars(AttrDictVars):
     """Dual access env vars.
 
-    On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
-    They remove / add `_external_name_prefix` to the names.
+    Access to env vars as object attributes or as dict items.
+    Do not allow to change vars so this is read-only source of env vars values.
 
-    Access with attributes or as dict.
-    Dict-like access just do no changes in the var name.
-    Attribute access do `_attr_to_var_name()` - by default it converts python attribute name
-    from snake_case to kebab-case.
-    With attributes you can only access explicitly declared vars.
-    Both attributes and dict-like access add prefix `_external_name_prefix` and uppercase names before
-    searching in env.
-    So vars["var-name"] and vars.var_name will search for "INPUT_VAR-NAME" in env if the prefix is "INPUT_".
-
-    On attributes access convert camel_case of the attributes names to kebab-case with
-    `_attr_to_var_name()` method.
-    Because this is the only way to express with attributes the names with dash "-".
-    Dict-like access does not modify names because for it we can use any style we want.
-
+    With attributes, you can only access explicitly declared vars, with dict - any.
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyTextFileVars(EnvAttrDictVars):
+        class MyVars(EnvAttrDictVars):
             documented_var: str
 
-            def __init__(self) -> None:
-                super().__init__(Path("my_vars.txt"))
-
-        vars = MyTextFileVars()
+        vars = MyVars(prefix="INPUT_")
         print(vars["undocumented_var"])  # from os.environ["INPUT_UNDOCUMENTED_VAR"]
         print(vars.documented_var)  # from os.environ["INPUT_DOCUMENTED-VAR"]
+
+    Attribute names converted with method `_attr_to_var_name()` - it converts python attribute
+    name from snake_case to kebab-case.
+
+    In addition, all names are prefixed with `_external_name_prefix` and converted to uppercase
+    before searching in environment (see `_external_name()` method).
+    So `vars["var-name"]` and `vars.var_name` will search for the same "INPUT_VAR-NAME" in env
+    if the prefix is "INPUT_".
+
     """
 
-    def __init__(self, prefix: str = "INPUT_") -> None:
-        """Init the prefix."""
+    def __init__(self, *, prefix: str = "") -> None:
+        """Init the prefix (see `_external_name()` method)."""
         self._external_name_prefix = prefix
 
     def _external_name(self, name: str) -> str:
@@ -69,7 +62,7 @@ class EnvAttrDictVars(AttrDictVars):
         env_var_name = self._external_name(key)
         if env_var_name in os.environ:
             return os.environ[env_var_name]
-        raise KeyError(f"{key} not found in environment variables")
+        raise KeyError(f"`{key}` ({env_var_name}) not found in environment variables")
 
     def __setitem__(self, key: str, value: Any) -> None:
         raise NotImplementedError("Setting environment variables is not supported.")
@@ -84,4 +77,8 @@ class EnvAttrDictVars(AttrDictVars):
         raise NotImplementedError("Getting the number of environment variables is not supported.")
 
     def __contains__(self, key: object) -> bool:
-        return self._external_name(self._attr_to_var_name(typing.cast(str, key))) in os.environ
+        env_var_name = self._external_name(self._attr_to_var_name(typing.cast(str, key)))
+        exists = env_var_name in os.environ
+        if not exists:
+            print(f"`{key}` ({env_var_name}) not found in environment variables")
+        return exists

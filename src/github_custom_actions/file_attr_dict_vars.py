@@ -7,43 +7,37 @@ from github_custom_actions.attr_dict_vars import AttrDictVars
 class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
     """Dual access vars in a file.
 
-    Stored as `key=value` lines in a text file.
-    On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
-    They remove / add `_external_name_prefix` to the names.
-
+    File contains vars as `key=value` lines.
     Access with attributes or as dict.
-    Dict-like access just add `_external_name_prefix()" and do no other changes in the var name.
-    Attribute access also do `_attr_to_var_name()` - by default it converts python attribute name
-    from snake_case to kebab-case.
-    With attributes you can only access explicitly declared vars.
-
-    On attributes access convert camel_case of the attributes names to kebab-case with
-    `_attr_to_var_name()` method.
-    Because this is the only way to express with attributes the names with dash "-".
-    Dict-like access does not modify names because for it we can use any style we want.
-
+    With attributes, you can only access explicitly declared vars, with dict-like access you can access any var.
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyTextFileVars(FileAttrDictVars):
+        class MyVars(FileAttrDictVars):
             documented_var: str
 
-            def __init__(self) -> None:
-                super().__init__(Path("my_vars.txt"))
-
-        vars = MyTextFileVars()
+        vars = MyVars(Path("my_vars.txt"))
         vars["undocumented_var"] = "value1"
         vars.documented_var == "value2"
 
-        Produce "my_vars.txt" with:
-            documented-var=value1
-            undocumented_var=value2
+        # Produce "my_vars.txt" with:
+        #    documented-var=value1
+        #    undocumented_var=value2
+
+
+    On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
+    They remove / add `_external_name_prefix` to the names.
+
+    Attribute access also do `_attr_to_var_name()` - by default it converts python attribute name
+    from snake_case to kebab-case.
+
     """
 
-    def __init__(self, vars_file: Path) -> None:
-        """Init the vars file."""
-        self.vars_file: Path = vars_file
-        self._var_keys: Optional[Dict[str, str]] = None
+    def __init__(self, vars_file: Path, *, prefix: str = "") -> None:
+        """Init the vars file and prefix."""
+        self._external_name_prefix = prefix
+        self._vars_file: Path = vars_file
+        self._var_keys_cache: Optional[Dict[str, str]] = None
 
     def _external_name(self, name: str) -> str:
         """Convert variable name to the external form."""
@@ -71,6 +65,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
         except KeyError:
             self._get_var_keys[key] = ""
             self._save_var_file()
+            print(f"Variable `{key}` not found in `{self._vars_file}`")
             return ""
 
     def __setitem__(self, key: str, value: str) -> None:
@@ -87,7 +82,9 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
         vars.key = "value"
         """
         type_hints = self.__class__._get_type_hints()
-        if name in type_hints and not name.startswith("_"):
+        if not name.startswith("_"):
+            if name not in type_hints:
+                raise AttributeError(f"Unknown {name}")
             self[self._attr_to_var_name(name)] = value
         else:
             super().__setattr__(name, value)
@@ -108,22 +105,22 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
     @property
     def _get_var_keys(self) -> Dict[str, str]:
         """Load key-value pairs from a file, returning {} if the file does not exist."""
-        if self._var_keys is None:
+        if self._var_keys_cache is None:
             try:
-                content = self.vars_file.read_text(encoding="utf-8")
-                self._var_keys = {
+                content = self._vars_file.read_text(encoding="utf-8")
+                self._var_keys_cache = {
                     self._name_from_external(k): v
                     for k, v in (
                         line.split("=", 1) for line in content.splitlines() if "=" in line
                     )
                 }
             except FileNotFoundError:
-                self._var_keys = {}
-        return self._var_keys
+                self._var_keys_cache = {}
+        return self._var_keys_cache
 
     def _save_var_file(self) -> None:
-        self.vars_file.parent.mkdir(parents=True, exist_ok=True)
+        self._vars_file.parent.mkdir(parents=True, exist_ok=True)
         lines: List[str] = [
             f"{self._external_name(key)}={value}" for key, value in self._get_var_keys.items()
         ]
-        self.vars_file.write_text("\n".join(lines), encoding="utf-8")
+        self._vars_file.write_text("\n".join(lines), encoding="utf-8")

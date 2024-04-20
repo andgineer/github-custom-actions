@@ -77,6 +77,8 @@ def test_file_attr_dict_vars_unexisted_attribute(temp_vars_file):
     with pytest.raises(AttributeError):
         vars.undocumented_var
 
+    with pytest.raises(AttributeError):
+        vars.undocumented_var = "value1"
 
 def test_file_attr_dict_vars_iterator(temp_vars_file):
     class MyFileAttrDictVars(FileAttrDictVars):
@@ -119,11 +121,10 @@ def test_file_attr_dict_vars_write_external_names(temp_vars_file):
     vars = MyFileAttrDictVars(temp_vars_file)
     vars["undocumented_var"] = "value1"
     vars.documented_var = "value2"
+    assert temp_vars_file.read_text() == "EXT_undocumented_var=value1\nEXT_documented-var=value2"
 
     assert vars["undocumented_var"] == "value1"
     assert vars.documented_var == "value2"
-
-    assert temp_vars_file.read_text() == "EXT_undocumented_var=value1\nEXT_documented-var=value2"
 
 
 def test_file_attr_dict_vars_read_external_names(temp_vars_file):
@@ -149,9 +150,7 @@ def test_file_attr_dict_vars_read_prefixed_names(temp_vars_file):
     class MyFileAttrDictVars(FileAttrDictVars):
         documented_var: str
 
-        _external_name_prefix = "ext!_"
-
-    vars = MyFileAttrDictVars(temp_vars_file)
+    vars = MyFileAttrDictVars(temp_vars_file, prefix="ext!_")
     temp_vars_file.write_text("ext!_undocumented_var=value1\next!_documented-var=value2")
     assert vars["undocumented_var"] == "value1"
     assert vars.documented_var == "value2"

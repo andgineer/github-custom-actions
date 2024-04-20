@@ -6,9 +6,10 @@ So no fancy features like walrus operator, @cached_property, etc.
 
 import os
 import typing
-from collections.abc import MutableMapping
 from pathlib import Path
-from typing import Dict, Iterator, Union, List, Optional, Any
+from typing import Dict, Union, Optional, Any
+from github_custom_actions.file_attr_dict_vars import FileAttrDictVars
+
 
 INPUT_PREFIX = "INPUT_"
 
@@ -58,12 +59,10 @@ class ActionInputs(DocumentedEnvVars):  # pylint: disable=too-few-public-methods
     """GitHub Action input variables.
 
     Usage:
-        class MyAction:
-            @property
-            def inputs(self):
-                return InputProxy()
+        class MyInputs(ActionInputs):
+            my_input: str
 
-        action = MyAction()
+        action = ActionBase(inputs=MyInputs())
         # to get action input `my-input` from environment var `INPUT_MY-INPUT`
         print(action.inputs.my_input)
     """
@@ -72,57 +71,17 @@ class ActionInputs(DocumentedEnvVars):  # pylint: disable=too-few-public-methods
         return INPUT_PREFIX + name.upper().replace("_", "-")
 
 
-class ActionOutputs(MutableMapping):  # type: ignore
+class ActionOutputs(FileAttrDictVars):
     """GitHub Actions output variables.
 
     Usage:
-        class MyAction:
-            @property
-            def output(self):
-                return OutputProxy()
+        class MyOutputs(ActionOutputs):
+            my_output: str
 
-        action = MyAction()
-        action.output["my-output"] = "value"
+        action = ActionBase(outputs=MyOutputs())
+        action.outputs["my-output"] = "value"
+        action.outputs.my_output = "value"  # the same as above
     """
 
     def __init__(self) -> None:
-        self.output_file_path: Path = Path(os.environ["GITHUB_OUTPUT"])
-        self._output_keys: Optional[Dict[str, str]] = None
-
-    def __getitem__(self, key: str) -> str:
-        return self._get_output_keys[key]
-
-    def __setitem__(self, key: str, value: str) -> None:
-        self._get_output_keys[key] = value
-        self._save_output_file()
-
-    def __delitem__(self, key: str) -> None:
-        del self._get_output_keys[key]
-        self._save_output_file()
-
-    def __iter__(self) -> Iterator[str]:
-        return iter(self._get_output_keys)
-
-    def __len__(self) -> int:
-        return len(self._get_output_keys)
-
-    def __contains__(self, key: object) -> bool:
-        return key in self._get_output_keys
-
-    @property
-    def _get_output_keys(self) -> Dict[str, str]:
-        """Load key-value pairs from a file, returning {} if the file does not exist."""
-        if self._output_keys is None:
-            try:
-                content = self.output_file_path.read_text(encoding="utf-8")
-                self._output_keys = dict(
-                    (line.split("=", 1) for line in content.splitlines() if "=" in line)
-                )
-            except FileNotFoundError:
-                self._output_keys = {}
-        return self._output_keys
-
-    def _save_output_file(self) -> None:
-        self.output_file_path.parent.mkdir(parents=True, exist_ok=True)
-        lines: List[str] = [f"{key}={value}" for key, value in self._get_output_keys.items()]
-        self.output_file_path.write_text("\n".join(lines), encoding="utf-8")
+        super().__init__(Path(os.environ["GITHUB_OUTPUT"]))

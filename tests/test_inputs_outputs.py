@@ -8,12 +8,14 @@ def test_input_retrieval(action):
     assert action.inputs.another_input == "value2"
 
 
-def test_output_set_and_get(inputs, outputs):
+def test_output_set_and_read(action):
     """Test setting and getting output values."""
-    action = ActionBase()
     action.outputs["my_output"] = "output_value"
+    with pytest.raises(AttributeError):
+        action.outputs.my_output2 = "output_value2"
+    action.outputs.my_output = "output_value2"
 
-    assert outputs.read_text() == "my_output=output_value"
+    assert action.vars.github_output.read_text() == "my_output=output_value\nmy-output=output_value2"
 
 
 def test_input_caching(action, monkeypatch):
