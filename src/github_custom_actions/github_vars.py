@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from github_custom_actions.inputs_outputs import DocumentedEnvVars
+from github_custom_actions.env_attr_dict_vars import EnvAttrDictVars
 
 
-class GithubVars(DocumentedEnvVars):
+class GithubVars(EnvAttrDictVars):
     """GitHub Action environment variables.
 
     https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
@@ -24,6 +24,11 @@ class GithubVars(DocumentedEnvVars):
     Only described Github vars are loaded.
     Paths and files have type Path.
     """
+
+    # pylint: disable=abstract-method  # we want RO implementation that raises NotImplementedError on write
+
+    def _attr_to_var_name(self, name: str) -> str:
+        return name  # leave as is
 
     CI: str
     """Always set to true."""

@@ -56,7 +56,9 @@ class EnvAttrDictVars(AttrDictVars):
                     value = Path(value) if value else None
                 self.__dict__[name] = value
                 return value
-            raise
+            raise AttributeError(
+                f"`{name}` ({env_var_name}) not found in environment variables"
+            ) from exc
 
     def __getitem__(self, key: str) -> Any:
         env_var_name = self._external_name(key)

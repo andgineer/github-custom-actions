@@ -5,57 +5,15 @@ So no fancy features like walrus operator, @cached_property, etc.
 """
 
 import os
-import typing
 from pathlib import Path
-from typing import Dict, Union, Optional, Any
 from github_custom_actions.file_attr_dict_vars import FileAttrDictVars
+from github_custom_actions.env_attr_dict_vars import EnvAttrDictVars
 
 
 INPUT_PREFIX = "INPUT_"
 
 
-class DocumentedEnvVars:
-    """Documented environment variables.
-
-    Lazy load attributes from environment variables.
-    Only described attributes are loaded.
-    Attributes with type Path converted accordingly, it the value is "" set to None.
-    """
-
-    # todo: should be readonly
-    _type_hints_cache: Dict[str, Dict[str, Any]] = {}
-
-    @classmethod
-    def _get_type_hints(cls) -> Dict[str, Any]:
-        # Use cls.__name__ to ensure each subclass uses its own cache entry
-        if cls.__name__ not in cls._type_hints_cache:
-            cls._type_hints_cache[cls.__name__] = typing.get_type_hints(cls)
-        return cls._type_hints_cache[cls.__name__]
-
-    def attribute_to_env_var(self, name: str) -> str:
-        """Convert attribute name to environment variable name."""
-        return name.upper()
-
-    def __getattribute__(self, name: str) -> Any:
-        try:
-            return super().__getattribute__(name)
-        except AttributeError as exc:
-            type_hints = self.__class__._get_type_hints()
-            if name not in type_hints:
-                raise AttributeError(f"Unknown {name}") from exc
-            env_var_name = self.attribute_to_env_var(name)
-            if env_var_name in os.environ:
-                value: Optional[Union[str, Path]] = os.environ[env_var_name]
-
-                # If the type hint is Path, convert the value to Path
-                if type_hints[name] is Path:
-                    value = Path(value) if value else None
-                self.__dict__[name] = value
-                return value
-            raise
-
-
-class ActionInputs(DocumentedEnvVars):  # pylint: disable=too-few-public-methods
+class ActionInputs(EnvAttrDictVars):
     """GitHub Action input variables.
 
     Usage:
@@ -63,12 +21,16 @@ class ActionInputs(DocumentedEnvVars):  # pylint: disable=too-few-public-methods
             my_input: str
 
         action = ActionBase(inputs=MyInputs())
+
         # to get action input `my-input` from environment var `INPUT_MY-INPUT`
         print(action.inputs.my_input)
+        print(action.inputs["my-input"])  # the same as above
     """
 
-    def attribute_to_env_var(self, name: str) -> str:
-        return INPUT_PREFIX + name.upper().replace("_", "-")
+    # pylint: disable=abstract-method  # we want RO implementation that raises NotImplementedError on write
+
+    def __init__(self) -> None:
+        super().__init__(prefix=INPUT_PREFIX)
 
 
 class ActionOutputs(FileAttrDictVars):
