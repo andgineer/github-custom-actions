@@ -77,7 +77,7 @@ if __name__ == "__main__":
 ```
 
 Now you can utilize the attributes defined in the `inputs` and `outputs` classes of the action. 
-All names are converted to snake_case, allowing dot notation like `inputs.my_input`
+All attributes names are converted to `kebab-case`, allowing dot notation like `inputs.my_input`
 to replace the `inputs['my-input']`.
 
 ### Example of usage

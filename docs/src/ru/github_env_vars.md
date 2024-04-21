@@ -6,10 +6,16 @@
 
 ```python
 from github_custom_actions import ActionBase
-
+    
 class MyAction(ActionBase):
     def main(self):
-        print(self.vars.github_repository)
+        self.outputs["runner-os"] = self.vars.runner_os
+        self.summary.text += (
+            self.render(
+                "### {{ inputs['my-input'] }}.\n"
+                "Have a nice day!"
+            )
+        )
 ```
 
 Поддерживается автодополнение в IDE и документация при наведении:
