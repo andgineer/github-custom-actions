@@ -52,6 +52,7 @@ def compile_requirements(c: Context):
     print(f"Req's dev compilation time: {int(end_time) - int(reqs_time)} seconds")
     print(f"Total execution time: {int(end_time) - int(start_time)} seconds")
 
+    c.run("scripts/include_pyproject_requirements.py requirements.in")
 
 @task(pre=[compile_requirements])
 def reqs(c: Context):

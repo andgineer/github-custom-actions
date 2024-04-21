@@ -9,7 +9,7 @@ bracex==2.3.post1
     # via wcmatch
 cached-property==1.5.2
     # via griffe
-certifi==2023.11.17
+certifi==2024.2.2
     # via requests
 cfgv==3.3.1
     # via pre-commit
@@ -29,7 +29,7 @@ distlib==0.3.8
     # via virtualenv
 editables==0.5
     # via hatchling
-exceptiongroup==1.2.0
+exceptiongroup==1.2.1
     # via pytest
 filelock==3.12.2
     # via virtualenv
@@ -40,7 +40,7 @@ griffe==0.30.1
 hatchling==1.17.1
 identify==2.5.24
     # via pre-commit
-idna==3.6
+idna==3.7
     # via requests
 importlib-metadata==6.7.0
     # via
@@ -104,7 +104,7 @@ natsort==8.4.0
     # via mkdocs-awesome-pages-plugin
 nodeenv==1.8.0
     # via pre-commit
-packaging==23.2
+packaging==24.0
     # via
     #   hatchling
     #   mkdocs
@@ -132,10 +132,10 @@ pymdown-extensions==10.2.1
     # via
     #   mkdocs-material
     #   mkdocstrings
-pytest==7.4.3
+pytest==7.4.4
     # via pytest-cov
 pytest-cov==4.1.0
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via ghp-import
 pytz==2024.1
     # via babel
@@ -163,9 +163,9 @@ tomli==2.0.1
     #   mypy
     #   pylint
     #   pytest
-tomlkit==0.12.3
+tomlkit==0.12.4
     # via pylint
-trove-classifiers==2023.11.29
+trove-classifiers==2024.4.10
     # via hatchling
 typed-ast==1.5.5
     # via
@@ -182,7 +182,7 @@ typing-extensions==4.7.1
     #   pylint
 urllib3==2.0.7
     # via requests
-virtualenv==20.25.0
+virtualenv==20.25.3
     # via pre-commit
 watchdog==3.0.0
     # via mkdocs
