@@ -1,8 +1,9 @@
 import sys
 import traceback
+from pathlib import Path
 from typing import Any, Optional
 
-from jinja2 import Template
+from jinja2 import Template, Environment, FileSystemLoader
 
 from github_custom_actions.inputs_outputs import ActionOutputs, ActionInputs
 from github_custom_actions.github_vars import GithubVars
@@ -40,6 +41,8 @@ class ActionBase:
     Implement main() method in the subclass.
     """
 
+    vars: GithubVars
+
     def __init__(
         self, inputs: Optional[ActionInputs] = None, outputs: Optional[ActionOutputs] = None
     ) -> None:
@@ -48,6 +51,10 @@ class ActionBase:
         self.inputs = inputs if inputs is not None else ActionInputs()
         self.outputs = outputs if outputs is not None else ActionOutputs()
         self.vars = GithubVars()
+
+        base_dir = Path(__file__).resolve().parent
+        templates_dir = base_dir / "templates"
+        self.environment = Environment(loader=FileSystemLoader(str(templates_dir)))
 
     summary = FileTextProperty("github_step_summary")
 

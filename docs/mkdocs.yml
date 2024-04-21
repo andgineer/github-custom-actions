@@ -10,6 +10,12 @@ edit_uri: edit/master/docs
 docs_dir: 'src/LANGUAGE'
 site_dir: '../site/SITE_PREFIX'
 
+nav:
+  - index.md
+  - installation.md
+  - inputs.md
+  - github_env_vars.md
+
 plugins:
   - awesome-pages
   - search:
