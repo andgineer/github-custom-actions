@@ -7,20 +7,7 @@ It works with Python 3.7 and up, so even those dusty old self-hosted action runn
 ### Quick start
 
 ```python
-from github_custom_actions import ActionBase
-    
-class MyAction(ActionBase):
-    def main(self):
-        self.outputs["runner-os"] = self.vars.runner_os
-        self.summary.text += (
-            self.render(
-                "### {{ inputs['my-input'] }}.\n"
-                "Have a nice day!"
-            )
-        )
-
-if __name__ == "__main__":
-    MyAction().run()
+--8<-- "quick_start.py"
 ```
 
 This example uses the `runner_os` variable from GitHub environment variables. 
@@ -40,45 +27,17 @@ The main block runs the `main()` method of the action with the necessary boilerp
 With explicitly defined inputs and outputs, you can use typo-checked code autocompletion:
 
 ```python
-from github_custom_actions import ActionBase, ActionInputs, ActionOutputs
-
-class MyInputs(ActionInputs):
-    my_input: str
-    """My input description"""
-    
-    my_path: Path
-    """My path description"""
-    
-    
-class MyOutputs(ActionOutputs):
-    runner_os: str
-    """Runner OS description"""
-
-    
-class MyAction(ActionBase):
-    
-    inputs = MyInputs()
-    outputs = MyOutputs()
-
-    def main(self):
-        if self.inputs.my_path is None:
-            raise ValueError("my-path is required")
-        self.inputs.my_path.mkdir(exist_ok=True)
-        self.outputs.runner_os = self.vars.runner_os
-        self.summary.text += (
-            self.render(
-                "### {{ inputs.my_input }}.\n"
-                "Have a nice day!"
-            )
-        )
-
-if __name__ == "__main__":
-    MyAction().run()
+--8<-- "input_output_typed.py"
 ```
+
+Note that you only define the types of inputs and outputs, and instances are created automatically
+upon `MyAction` initialization.
 
 Now you can utilize the attributes defined in the `inputs` and `outputs` classes of the action. 
 All attributes names are converted to `kebab-case`, allowing dot notation like `inputs.my_input`
 to replace the `inputs['my-input']`.
+
+But still can use the `inputs['my-input']` style if you prefer.
 
 ### Example of usage
 [allure-report action](https://github.com/andgineer/allure-report)

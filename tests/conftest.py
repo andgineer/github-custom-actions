@@ -38,6 +38,11 @@ class Outputs(ActionOutputs):
     my_output: str
 
 
+class Action(ActionBase):
+    inputs: Inputs
+    outputs: Outputs
+
+
 @pytest.fixture(scope="function")
 def action(inputs, outputs):
-    return ActionBase(inputs=Inputs(), outputs=Outputs())
+    return Action()

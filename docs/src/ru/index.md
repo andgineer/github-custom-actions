@@ -8,24 +8,7 @@
 ### Быстрый старт
 
 ```python
-from github_custom_actions import ActionBase
-
-    
-class MyAction(ActionBase):
-    def main(self):
-        if self.inputs["my-path"] is None:
-            raise ValueError("my-path is required")
-        self.inputs["my-path"].mkdir(exist_ok=True)
-        self.outputs["runner-os"] = self.vars.runner_os
-        self.summary.text += (
-            self.render(
-                "### {{ inputs.my_input }}.\n"
-                "Have a nice day!"
-            )
-        )
-
-if __name__ == "__main__":
-    MyAction().run()
+--8<-- "quick_start.py"
 ```
 
 Этот пример использует переменную `runner_os` из переменных окружения GitHub. 
@@ -46,44 +29,17 @@ Action получает значение из action input `my-input` и ото�
 С явно определенными входами и выходами вы можете использовать автодополнение кода с проверкой на опечатки:
 
 ```python
-from github_custom_actions import ActionBase, ActionInputs, ActionOutputs
-
-class MyInputs(ActionInputs):
-    my_input: str
-    """My input description"""
-    
-    my_path: Path
-    """My path description"""
-    
-    
-class MyOutputs(ActionOutputs):
-    runner_os: str
-    """Runner OS description"""
-
-    
-class MyAction(ActionBase):
-    inputs = MyInputs()
-    outputs = MyOutputs()
-
-    def main(self):
-        if self.inputs.my_path is None:
-            raise ValueError("my-path is required")
-        self.inputs.my_path.mkdir(exist_ok=True)
-        self.outputs.runner_os = self.vars.runner_os
-        self.summary.text += (
-            self.render(
-                "### {{ inputs.my_input }}.\n"
-                "Have a nice day!"
-            )
-        )
-
-if __name__ == "__main__":
-    MyAction().run()
+--8<-- "input_output_typed.py"
 ```
+
+Обратите внимание, что вы только определяете типы входов и выходов, а экземпляры этих классов создаются автоматически
+при инициализации `MyAction`.
 
 Теперь вы можете использовать атрибуты, определенные в классах `inputs` и `outputs` действия. 
 Все имена атрибутов преобразуются в `kebab-case`, что позволяет использовать точечную нотацию, например `inputs.my_input`, 
 вместо `inputs['my-input']`.
+
+При желании вы все также можете использовать стиль `inputs['my-input']`.
 
 ### Пример использования
 [allure-report action](https://github.com/andgineer/allure-report)

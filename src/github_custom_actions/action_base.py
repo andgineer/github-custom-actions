@@ -1,7 +1,7 @@
 import sys
 import traceback
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, get_type_hints
 
 from jinja2 import Template, Environment, FileSystemLoader
 
@@ -41,15 +41,15 @@ class ActionBase:
     Implement main() method in the subclass.
     """
 
+    inputs: ActionInputs
+    outputs: ActionOutputs
     vars: GithubVars
 
-    def __init__(
-        self, inputs: Optional[ActionInputs] = None, outputs: Optional[ActionOutputs] = None
-    ) -> None:
-        # (!) AttrDictVars() works as dict so empty one is False.
-        # This is why we cannot use usual shorthand "or" here
-        self.inputs = inputs if inputs is not None else ActionInputs()
-        self.outputs = outputs if outputs is not None else ActionOutputs()
+    def __init__(self) -> None:
+        # Initialize inputs, outputs according to the type than could be set in subclass.
+        types = get_type_hints(self.__class__)
+        self.inputs = types["inputs"]()
+        self.outputs = types["outputs"]()
         self.vars = GithubVars()
 
         base_dir = Path(__file__).resolve().parent
