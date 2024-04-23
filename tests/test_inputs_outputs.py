@@ -15,7 +15,7 @@ def test_output_set_and_read(action):
         action.outputs.my_output2 = "output_value2"
     action.outputs.my_output = "output_value2"
 
-    assert action.vars.github_output.read_text() == "my_output=output_value\nmy-output=output_value2"
+    assert action.env.github_output.read_text() == "my_output=output_value\nmy-output=output_value2"
 
 
 def test_input_caching(action, monkeypatch):
@@ -29,3 +29,8 @@ def test_input_caching(action, monkeypatch):
 
     monkeypatch.delenv("INPUT_MY-INPUT")
     assert action.inputs.my_input == "value1"  # from cache
+
+
+def test_output_dict_exact(action):
+    action.outputs["snake_eatsCamel-NOT-kebab"] = "a"
+    assert action.env.github_output.read_text() == "snake_eatsCamel-NOT-kebab=a"

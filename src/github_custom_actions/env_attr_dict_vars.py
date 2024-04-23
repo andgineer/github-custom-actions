@@ -24,21 +24,7 @@ class EnvAttrDictVars(AttrDictVars):
 
     Attribute names converted with method `_attr_to_var_name()` - it converts python attribute
     name from snake_case to kebab-case.
-
-    In addition, all names are prefixed with `_external_name_prefix` and converted to uppercase
-    before searching in environment (see `_external_name()` method).
-    So `vars["var-name"]` and `vars.var_name` will search for the same "INPUT_VAR-NAME" in env
-    if the prefix is "INPUT_".
-
     """
-
-    def __init__(self, *, prefix: str = "") -> None:
-        """Init the prefix (see `_external_name()` method)."""
-        self._external_name_prefix = prefix
-
-    def _external_name(self, name: str) -> str:
-        """Convert variable name to the external form."""
-        return self._external_name_prefix + name.upper()
 
     def __getattribute__(self, name: str) -> Any:
         try:

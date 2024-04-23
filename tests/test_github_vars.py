@@ -21,6 +21,7 @@ def test_github_vars_lazy_load(monkeypatch):
 def test_github_vars_unknown():
     vars = GithubVars()
     os.environ["GITHUB_UNKNOWN"] = "test"
+    assert vars["GITHUB_UNKNOWN"] == "test"
     with pytest.raises(AttributeError, match=r"Unknown github_unknown"):
         assert vars.github_unknown == "test"
 
@@ -35,3 +36,9 @@ def test_github_vars_empty_path(monkeypatch):
     vars = GithubVars()
     monkeypatch.setenv("GITHUB_OUTPUT", "")
     assert vars.github_output is None
+
+
+def test_github_vars_dict_exact(monkeypatch):
+    vars = GithubVars()
+    monkeypatch.setenv("snake_eatsCamel-NOT-kebab", "a")
+    assert vars["snake_eatsCamel-NOT-kebab"] == "a"

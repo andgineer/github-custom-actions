@@ -14,6 +14,7 @@ nav:
   - index.md
   - installation.md
   - inputs.md
+  - outputs.md
   - github_env_vars.md
 
 plugins:

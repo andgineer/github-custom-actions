@@ -1,3 +1,4 @@
+import shutil
 import sys
 
 from invoke import task, Context, Collection
@@ -66,6 +67,10 @@ def docs_task_factory(language: str):
         """Docs preview for the language specified."""
         c.run("open -a 'Google Chrome' http://127.0.0.1:8000/github-custom-actions/")
         c.run(f"scripts/docs-render-config.sh {language}")
+        if language != "en":
+            shutil.rmtree(f"./docs/src/{language}/images", ignore_errors=True)
+            shutil.copytree("./docs/src/en/images", f"./docs/src/{language}/images")
+            shutil.copy("./docs/src/en/reference.md", f"./docs/src/{language}/reference.md")
         c.run("mkdocs serve -f docs/_mkdocs.yml")
 
     return docs

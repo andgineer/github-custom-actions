@@ -20,14 +20,14 @@ class FileTextProperty:
         self.var_name = var_name
 
     def __get__(self, obj: Any, objtype: Any = None) -> str:
-        path = getattr(obj.vars, self.var_name)
+        path = getattr(obj.env, self.var_name)
         try:
             return path.read_text()  # type: ignore
         except FileNotFoundError:
             return ""
 
     def __set__(self, obj: Any, value: str) -> None:
-        path = getattr(obj.vars, self.var_name)
+        path = getattr(obj.env, self.var_name)
         try:
             path.write_text(value)
         except FileNotFoundError:
@@ -43,14 +43,14 @@ class ActionBase:
 
     inputs: ActionInputs
     outputs: ActionOutputs
-    vars: GithubVars
+    env: GithubVars
 
     def __init__(self) -> None:
         # Initialize inputs, outputs according to the type than could be set in subclass.
         types = get_type_hints(self.__class__)
         self.inputs = types["inputs"]()
         self.outputs = types["outputs"]()
-        self.vars = GithubVars()
+        self.env = GithubVars()
 
         base_dir = Path(__file__).resolve().parent
         templates_dir = base_dir / "templates"
@@ -71,9 +71,9 @@ class ActionBase:
             sys.exit(1)
 
     def render(self, template: str) -> str:
-        """Render template with context including inputs, outputs, and vars."""
+        """Render template with context including inputs, outputs, and env."""
         return Template(template.replace("\\n", "\n")).render(
-            vars=self.vars,
+            env=self.env,
             inputs=self.inputs,
             outputs=self.outputs,
         )

@@ -9,26 +9,30 @@ class GithubVars(EnvAttrDictVars):
     https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
 
     Usage:
+       ```python
        class MyAction:
            @property
-           def vars(self):
+           def env(self):
                return GithubVars()
 
        action = MyAction()
-       print(action.vars.github_repository)
+       print(action.env.github_repository)
+       ```
 
     Thanks to the docstrings your IDE will provide you with doc hints when you hover over the property.
     We do not load the attributes on the class init but do it Lazily.
     Once read, the value is stored in the instance dictionary and is not extracted from env anymore.
 
-    Only described Github vars are loaded.
+    Converts attribute names to uppercase.
+    Leave dict-style names unchanged.
+
     Paths and files have type Path.
     """
 
     # pylint: disable=abstract-method  # we want RO implementation that raises NotImplementedError on write
 
     def _attr_to_var_name(self, name: str) -> str:
-        return name  # leave as is
+        return name.upper()
 
     CI: str
     """Always set to true."""

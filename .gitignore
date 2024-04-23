@@ -12,3 +12,5 @@ pytest-coverage.txt
 *.py-e
 .venv/
 **/_mkdocs.yml*
+**/ru/images/
+**/ru/reference.md

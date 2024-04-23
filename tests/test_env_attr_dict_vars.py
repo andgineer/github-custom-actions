@@ -19,8 +19,8 @@ def setup_env_vars():
 class MyTextFileVars(EnvAttrDictVars):
     documented_var: str
 
-    def __init__(self) -> None:
-        super().__init__(prefix='INPUT_')
+    def _external_name(self, name: str) -> str:
+        return "INPUT_" + name.upper()
 
 
 def test_env_attr_dict_vars_attribute_access(setup_env_vars):
