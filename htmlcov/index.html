@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Coverage report</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script type="text/javascript" src="coverage_html.js" defer></script>
+    <script src="coverage_html.js" defer></script>
 </head>
 <body class="indexfile">
 <header>
@@ -16,13 +16,13 @@
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
             <label for="help_panel_state">
-                <img id="keyboard_icon" src="keybd_closed.png" alt="Show/hide keyboard shortcuts" />
+                <img id="keyboard_icon" src="keybd_closed.png" alt="Show/hide keyboard shortcuts">
             </label>
             <div id="help_panel">
                 <p class="legend">Shortcuts on this page</p>
                 <div class="keyhelp">
                     <p>
-                        <kbd>n</kbd>
+                        <kbd>f</kbd>
                         <kbd>s</kbd>
                         <kbd>m</kbd>
                         <kbd>x</kbd>
@@ -41,11 +41,20 @@
             </div>
         </aside>
         <form id="filter_container">
-            <input id="filter" type="text" value="" placeholder="filter..." />
+            <input id="filter" type="text" value="" placeholder="filter...">
+            <div>
+                <input id="hide100" type="checkbox" >
+                <label for="hide100">hide covered</label>
+            </div>
         </form>
+        <h2>
+                <a class="button current">Files</a>
+                <a class="button" href="function_index.html">Functions</a>
+                <a class="button" href="class_index.html">Classes</a>
+        </h2>
         <p class="text">
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-23 07:35 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.5.0">coverage.py v7.5.0</a>,
+            created at 2024-04-24 07:52 +0000
         </p>
     </div>
 </header>
@@ -53,58 +62,58 @@
     <table class="index" data-sortable>
         <thead>
             <tr class="tablehead" title="Click to sort">
-                <th class="name left" aria-sort="none" data-shortcut="n">Module</th>
-                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="s">statements</th>
-                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="m">missing</th>
-                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="x">excluded</th>
-                <th class="right" aria-sort="none" data-shortcut="c">coverage</th>
+                <th class="name left" aria-sort="none" data-shortcut="f">File<span class="arrows"></span></th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="s">statements<span class="arrows"></span></th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="m">missing<span class="arrows"></span></th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="x">excluded<span class="arrows"></span></th>
+                <th class="right" aria-sort="none" data-shortcut="c">coverage<span class="arrows"></span></th>
             </tr>
         </thead>
         <tbody>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0___about___py.html">src/github_custom_actions/__about__.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0___about___py.html">src/github_custom_actions/__about__.py</a></td>
                 <td>1</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="1 1">100%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_action_base_py.html">src/github_custom_actions/action_base.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_action_base_py.html">src/github_custom_actions/action_base.py</a></td>
                 <td>46</td>
                 <td>12</td>
                 <td>0</td>
                 <td class="right" data-ratio="34 46">74%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_attr_dict_vars_py.html">src/github_custom_actions/attr_dict_vars.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_attr_dict_vars_py.html">src/github_custom_actions/attr_dict_vars.py</a></td>
                 <td>14</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="14 14">100%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_env_attr_dict_vars_py.html">src/github_custom_actions/env_attr_dict_vars.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_env_attr_dict_vars_py.html">src/github_custom_actions/env_attr_dict_vars.py</a></td>
                 <td>40</td>
                 <td>7</td>
                 <td>0</td>
                 <td class="right" data-ratio="33 40">82%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_file_attr_dict_vars_py.html">src/github_custom_actions/file_attr_dict_vars.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_file_attr_dict_vars_py.html">src/github_custom_actions/file_attr_dict_vars.py</a></td>
                 <td>64</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="64 64">100%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_github_vars_py.html">src/github_custom_actions/github_vars.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_github_vars_py.html">src/github_custom_actions/github_vars.py</a></td>
                 <td>91</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="91 91">100%</td>
             </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_e2e88e68ba03d6d0_inputs_outputs_py.html">src/github_custom_actions/inputs_outputs.py</a></td>
+            <tr class="region">
+                <td class="name left"><a href="z_e2e88e68ba03d6d0_inputs_outputs_py.html">src/github_custom_actions/inputs_outputs.py</a></td>
                 <td>11</td>
                 <td>0</td>
                 <td>0</td>
@@ -128,16 +137,16 @@
 <footer>
     <div class="content">
         <p>
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.4.4">coverage.py v7.4.4</a>,
-            created at 2024-04-23 07:35 +0000
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.5.0">coverage.py v7.5.0</a>,
+            created at 2024-04-24 07:52 +0000
         </p>
     </div>
     <aside class="hidden">
-        <a id="prevFileLink" class="nav" href="d_e2e88e68ba03d6d0_inputs_outputs_py.html"/>
-        <a id="nextFileLink" class="nav" href="d_e2e88e68ba03d6d0___about___py.html"/>
-        <button type="button" class="button_prev_file" data-shortcut="["/>
-        <button type="button" class="button_next_file" data-shortcut="]"/>
-        <button type="button" class="button_show_hide_help" data-shortcut="?"/>
+        <a id="prevFileLink" class="nav" href="z_e2e88e68ba03d6d0_inputs_outputs_py.html"></a>
+        <a id="nextFileLink" class="nav" href="z_e2e88e68ba03d6d0___about___py.html"></a>
+        <button type="button" class="button_prev_file" data-shortcut="["></button>
+        <button type="button" class="button_next_file" data-shortcut="]"></button>
+        <button type="button" class="button_show_hide_help" data-shortcut="?"></button>
     </aside>
 </footer>
 </body>
