@@ -9,21 +9,24 @@ class EnvAttrDictVars(AttrDictVars):
     """Dual access env vars.
 
     Access to env vars as object attributes or as dict items.
-    Do not allow to change vars so this is read-only source of env vars values.
+    Do not allow changing vars, so this is a read-only source of env vars values.
 
-    With attributes, you can only access explicitly declared vars, with dict - any.
+    With attributes, you can only access explicitly declared vars,
+    with dict-like access you can access any var.
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyVars(EnvAttrDictVars):
-            documented_var: str
+       ```python
+       class MyVars(EnvAttrDictVars):
+           documented_var: str
 
-        vars = MyVars(prefix="INPUT_")
-        print(vars["undocumented_var"])  # from os.environ["INPUT_UNDOCUMENTED_VAR"]
-        print(vars.documented_var)  # from os.environ["INPUT_DOCUMENTED-VAR"]
+       vars = MyVars(prefix="INPUT_")
+       print(vars["undocumented_var"])  # from os.environ["INPUT_UNDOCUMENTED_VAR"]
+       print(vars.documented_var)  # from os.environ["INPUT_DOCUMENTED-VAR"]
+       ```
 
-    Attribute names converted with method `_attr_to_var_name()` - it converts python attribute
-    name from snake_case to kebab-case.
+    Attribute names are converted with the method `_attr_to_var_name()` - it converts Python attribute
+    names from snake_case to kebab-case.
     """
 
     def __getattribute__(self, name: str) -> Any:

@@ -13,9 +13,13 @@ site_dir: '../site/SITE_PREFIX'
 nav:
   - index.md
   - installation.md
+  - base.md
   - inputs.md
   - outputs.md
   - github_env_vars.md
+  - main.md
+  - summary.md
+  - render.md
 
 plugins:
   - awesome-pages

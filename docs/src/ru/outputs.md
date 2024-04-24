@@ -1,26 +1,25 @@
-# outputs вашей GitHub Action
+Выходные переменные GitHub Action (outputs)
 
-Выходящие параметры описываются в наследнике 
-[class ActionOutputs][github_custom_actions.ActionOutputs]
-
-Если вы не создаете наследника, то можете получать выходные параметры в стиле словаря.
-Описав же наследника вы получите все преимущества автодополнения и проверки типов.
-
+Использование:
 ```python
 class MyOutputs(ActionOutputs):
-    my_output: str
+   my_output: str
 
 action = ActionBase(outputs=MyOutputs())
 action.outputs["my-output"] = "value"
-action.outputs.my_output = "value"  # the same as above
+action.outputs.my_output = "value"  # то же самое, что выше
 ```
 
-Имена атрибутов преобразуются в `kebab-case`. 
-Таким образом, `action.outputs.my_output` эквивалентен `action.outputs["my-output"]`.
+С атрибутами можно обращаться только к явно объявленным переменным,
+с помощью доступа, подобного словарю, можно обратиться к любой переменной.
+Таким образом, вы можете найти баланс между строго определёнными переменными и гибкостью.
 
-Если вам нужно получить доступ к выходным данным с именем в snake_case `my_output`, 
-следует использовать только стиль словаря: `action.outputs["my-output"]`. 
-Но обычно в именах выходных данных GitHub Actions используется kebab-case.
+Имена атрибутов преобразуются в `kebab-case`.
+Так что `action.outputs.my_output` тоже самое, что и `action.outputs["my-output"]`.
 
-Каждое присваивание переменных выводов изменяет файл выводов Github 
-(путь определяется переменной Github `action.env.github_output`).
+Если вам нужно обратиться к выходной переменной с именем в `snake_case`, например `my_output`,
+следует использовать только стиль словаря: `action.outputs["my_output"]`.
+Но обычно в именах выходных данных GitHub Actions используется `kebab-case`.
+
+Каждое присвоение выходной переменной изменяет файл выходных данных GitHub
+(путь определяется как `action.env.github_output`).

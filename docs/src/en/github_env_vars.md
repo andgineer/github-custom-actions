@@ -1,3 +1,5 @@
+# Github variables 
+
 In the `vars` attribute of the action class, you can access all the environment variables provided by GitHub.
 
 The library provides a full list of 

@@ -9,28 +9,29 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
 
     File contains vars as `key=value` lines.
     Access with attributes or as dict.
-    With attributes, you can only access explicitly declared vars, with dict-like access you can access any var.
+
+    With attributes, you can only access explicitly declared vars,
+    with dict-like access you can access any var.
     This way you can find your balance between strictly defined vars and flexibility.
 
     Usage:
-        class MyVars(FileAttrDictVars):
-            documented_var: str
+       class MyVars(FileAttrDictVars):
+           documented_var: str
 
-        vars = MyVars(Path("my_vars.txt"))
-        vars["undocumented_var"] = "value1"
-        vars.documented_var == "value2"
+       vars = MyVars(Path("my_vars.txt"))
+       vars["undocumented_var"] = "value1"
+       vars.documented_var == "value2"
 
-        # Produce "my_vars.txt" with:
-        #    documented-var=value1
-        #    undocumented_var=value2
+       # Produces "my_vars.txt" with:
+       #    documented-var=value2
+       #    undocumented_var=value1
 
 
-    On read / write converts var names with `_name_from_external()` / `_external_name()` methods.
-    They remove / add `_external_name_prefix` to the names.
+    On read/write, it converts var names with `_name_from_external()`/`_external_name()` methods.
+    They remove/add `_external_name_prefix` to the names.
 
-    Attribute access also do `_attr_to_var_name()` - by default it converts python attribute name
+    Attribute access also uses `_attr_to_var_name()` - by default it converts Python attribute names
     from snake_case to kebab-case.
-
     """
 
     def __init__(self, vars_file: Path, *, prefix: str = "") -> None:

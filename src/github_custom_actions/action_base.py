@@ -38,7 +38,45 @@ class FileTextProperty:
 class ActionBase:
     """Base class for GitHub Actions.
 
-    Implement main() method in the subclass.
+    You should implement `main()` method in the subclass.
+
+    You can define custom inputs and / or outputs types in the subclass.
+    You can do nothing in the subclass if you don't need typed inputs and outputs.
+
+    Note these are just types, instances of these types are automatically created in the `__init__` method.
+
+    Usage:
+    ```python
+    class MyInputs(ActionInputs):
+        my_input: str
+        '''My input description'''
+
+        my_path: Path
+        '''My path description'''
+
+    class MyOutputs(ActionOutputs):
+        runner_os: str
+        '''Runner OS description'''
+
+    class MyAction(ActionBase):
+        inputs: MyInputs
+        outputs: MyOutputs
+
+        def main(self):
+            if self.inputs.my_path is None:
+                raise ValueError("my-path is required")
+            self.inputs.my_path.mkdir(exist_ok=True)
+            self.outputs.runner_os = self.env.runner_os
+            self.summary.text += (
+                self.render(
+                    "### {{ inputs.my_input }}.\\n"
+                    "Have a nice day, {{ inputs['name'] }}!"
+                )
+            )
+
+    if __name__ == "__main__":
+        MyAction().run()
+    ```
     """
 
     inputs: ActionInputs
@@ -46,7 +84,7 @@ class ActionBase:
     env: GithubVars
 
     def __init__(self) -> None:
-        # Initialize inputs, outputs according to the type than could be set in subclass.
+        """Initialize inputs, outputs according to the type than could be set in subclass."""
         types = get_type_hints(self.__class__)
         self.inputs = types["inputs"]()
         self.outputs = types["outputs"]()
@@ -59,11 +97,26 @@ class ActionBase:
     summary = FileTextProperty("github_step_summary")
 
     def main(self) -> None:
-        """Main method."""
+        """Business logic of the action.
+
+        Is called by `run()` method.
+        """
         raise NotImplementedError
 
     def run(self) -> None:
-        """Run main method."""
+        """Run the action.
+
+        `run()` calls the `main()` method of the action with the necessary boilerplate to catch and
+        report exceptions.
+
+        Usage:
+        ```python
+        if __name__ == "__main__":
+            MyAction().run()
+        ```
+
+        `main()` is where you implement the business logic of your action.
+        """
         try:
             self.main()
         except Exception:  # pylint: disable=broad-except
@@ -71,7 +124,15 @@ class ActionBase:
             sys.exit(1)
 
     def render(self, template: str) -> str:
-        """Render template with context including inputs, outputs, and env."""
+        """Render template with Jinja.
+
+        Includes to the context the action's `inputs`, `outputs`, and `env`.
+        So you can use something like:
+        ```python
+        self.render("### {{ inputs.name }}!\\nHave a nice day!")
+        ```
+
+        """
         return Template(template.replace("\\n", "\n")).render(
             env=self.env,
             inputs=self.inputs,

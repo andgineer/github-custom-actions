@@ -11,18 +11,19 @@ handle it like champs.
 --8<-- "quick_start.py"
 ```
 
-This example uses the `runner_os` variable from GitHub environment variables. 
+This example uses the [runner_os][github_custom_actions.GithubVars.runner_os] 
+variable from 
+[GitHub environment variables][github_custom_actions.GithubVars]. 
 All variables from the GitHub environment are available in the `env`, 
 with descriptions shown in your IDE on mouse hover:
 ![var_ide_hover_docstring.jpg](images/var_ide_hover_docstring.jpg)
 
-The action gets a value from the `my-input` action input and renders 
-it in the action step summary on the GitHub build summary.
+The action gets a value from the `my-input` [action input](inputs) and renders 
+it in the action [step summary](summary) on the GitHub build summary.
 
-It also returns a value to the `runner-os` action output.
+It also returns a value to the `runner-os` [action output](outputs).
 
-The main block runs the `main()` method of the action with the necessary boilerplate 
-to catch and report exceptions.
+The `run()` in the main block runs the [main()](main) that implements your action.
 
 ### Explicitly defined inputs and outputs
 
@@ -33,7 +34,7 @@ With explicitly defined inputs and outputs, you can use typo-checked code autoco
 ```
 
 Note that you only define the types of inputs and outputs, and instances are created automatically
-upon `MyAction` initialization.
+upon [ActionBase](base) initialization.
 
 Now you can utilize the attributes defined in the `inputs` and `outputs` classes of the action. 
 All attributes names are converted to `kebab-case`, allowing dot notation like `inputs.my_input`
@@ -45,4 +46,4 @@ But still can use the `inputs['my-input']` style if you prefer.
 
 ### Example of usage
 
-[Allure Test Report Action](hhttps://github.com/andgineer/allure-report/blob/main/src/allure_generate.py)
+[Allure Test Report Action](https://github.com/andgineer/allure-report/blob/main/src/allure_generate.py)
