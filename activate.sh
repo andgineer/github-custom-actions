@@ -3,7 +3,7 @@
 # "Set-ups or/and activates development environment"
 #
 
-VENV_FOLDER="venv"
+VENV_FOLDER=".venv"
 PRIMARY_PYTHON_VERSION="3.7"  # sync with .github/workflows/docs.yml&static.yml
 
 RED='\033[1;31m'
@@ -26,18 +26,33 @@ if [[ ! -d ${VENV_FOLDER} ]] ; then
     unset CONDA_PREFIX  # if conda is installed, it will mess with the virtual env
 
     echo -e $CYAN"Creating virtual environment for python in ${VENV_FOLDER}"$NC
-    if uv venv ${VENV_FOLDER} --python=python${PRIMARY_PYTHON_VERSION}; then
-      START_TIME=$(date +%s)
 
-      . ${VENV_FOLDER}/bin/activate
-      uv pip install --upgrade pip
-      uv pip install -r requirements.dev.txt
+    # Check if the required Python version is installed
+    if ! command -v python${PRIMARY_PYTHON_VERSION} &> /dev/null; then
+        echo -e $RED"Error: Python ${PRIMARY_PYTHON_VERSION} is not installed."$NC
+        echo -e $YELLOW"Please install Python ${PRIMARY_PYTHON_VERSION} before proceeding."$NC
+        echo -e $YELLOW"You can download it from https://www.python.org/downloads/"$NC
+        return 1
+    fi
 
-      END_TIME=$(date +%s)
-      echo "Environment created in $((END_TIME - $START_TIME)) seconds"
+    if command -v uv &> /dev/null; then
+        START_TIME=$(date +%s)
+
+        if uv venv ${VENV_FOLDER} --python=python${PRIMARY_PYTHON_VERSION}; then
+            . ${VENV_FOLDER}/bin/activate
+            uv pip install --upgrade pip
+            uv pip install -r requirements.dev.txt
+
+            END_TIME=$(date +%s)
+            echo "Environment created in $((END_TIME - $START_TIME)) seconds"
+        else
+            echo -e $RED"Error creating virtual environment. Please check the output above for more details."$NC
+            return 1
+        fi
     else
-      echo -e $RED"Error to create virtual env. Do you have Astral's UV installed ( https://github.com/astral-sh/uv )?"$NC
-      return 1
+        echo -e $RED"Error: Astral's UV is not installed."$NC
+        echo -e $YELLOW"Please install UV from https://github.com/astral-sh/uv before proceeding."$NC
+        return 1
     fi
 else
     echo -e $CYAN"Activating virtual environment ..."$NC
