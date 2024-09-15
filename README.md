@@ -5,13 +5,13 @@
 | Name                                                  |    Stmts |     Miss |   Cover |   Missing |
 |------------------------------------------------------ | -------: | -------: | ------: | --------: |
 | src/github\_custom\_actions/\_\_about\_\_.py          |        1 |        0 |    100% |           |
-| src/github\_custom\_actions/action\_base.py           |       46 |       12 |     74% |26-27, 33-35, 104, 120-124, 136 |
+| src/github\_custom\_actions/action\_base.py           |       49 |       14 |     71% |26-27, 33-35, 104, 120-124, 136, 155-156 |
 | src/github\_custom\_actions/attr\_dict\_vars.py       |       14 |        0 |    100% |           |
 | src/github\_custom\_actions/env\_attr\_dict\_vars.py  |       40 |        7 |     82% |56, 68, 71-75 |
 | src/github\_custom\_actions/file\_attr\_dict\_vars.py |       64 |        0 |    100% |           |
 | src/github\_custom\_actions/github\_vars.py           |       91 |        0 |    100% |           |
 | src/github\_custom\_actions/inputs\_outputs.py        |       11 |        0 |    100% |           |
-|                                             **TOTAL** |  **267** |   **19** | **93%** |           |
+|                                             **TOTAL** |  **270** |   **21** | **92%** |           |
 
 
 ## Setup coverage badge
