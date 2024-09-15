@@ -22,6 +22,7 @@ class MyAction(ActionBase):
 if __name__ == "__main__":
     MyAction().run()
 ```
+
 # Documentation
 
 [Github Custom Actions](https://andgineer.github.io/github-custom-actions/)

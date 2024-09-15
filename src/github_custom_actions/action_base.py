@@ -138,3 +138,24 @@ class ActionBase:
             inputs=self.inputs,
             outputs=self.outputs,
         )
+
+    def render_template(self, template_name: str, **kwargs) -> str:
+        """Render template from the `templates` directory.
+
+        `template_name` is the name of the template file without the extension.
+        `kwargs` are the template context variables.
+
+        Also includes to the context the action's `inputs`, `outputs`, and `env`.
+
+        Usage:
+        ```python
+        self.render_template("executor.json", image="ubuntu-latest")
+        ```
+        """
+        template = self.environment.get_template(template_name)
+        return template.render(
+            env=self.env,
+            inputs=self.inputs,
+            outputs=self.outputs,
+            **kwargs
+        )
