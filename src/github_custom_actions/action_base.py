@@ -139,7 +139,7 @@ class ActionBase:
             outputs=self.outputs,
         )
 
-    def render_template(self, template_name: str, **kwargs) -> str:
+    def render_template(self, template_name: str, **kwargs: Any) -> str:
         """Render template from the `templates` directory.
 
         `template_name` is the name of the template file without the extension.
@@ -153,9 +153,4 @@ class ActionBase:
         ```
         """
         template = self.environment.get_template(template_name)
-        return template.render(
-            env=self.env,
-            inputs=self.inputs,
-            outputs=self.outputs,
-            **kwargs
-        )
+        return template.render(env=self.env, inputs=self.inputs, outputs=self.outputs, **kwargs)
