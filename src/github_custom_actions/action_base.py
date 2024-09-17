@@ -123,10 +123,13 @@ class ActionBase:
             traceback.print_exc(file=sys.stderr)
             sys.exit(1)
 
-    def render(self, template: str) -> str:
-        """Render template with Jinja.
+    def render(self, template: str, **kwargs: Any) -> str:
+        """Render the template from the string with Jinja.
 
-        Includes to the context the action's `inputs`, `outputs`, and `env`.
+        `kwargs` are the template context variables.
+
+        Also includes to the context the action's `inputs`, `outputs`, and `env`.
+
         So you can use something like:
         ```python
         self.render("### {{ inputs.name }}!\\nHave a nice day!")
@@ -137,6 +140,7 @@ class ActionBase:
             env=self.env,
             inputs=self.inputs,
             outputs=self.outputs,
+            **kwargs,
         )
 
     def render_template(self, template_name: str, **kwargs: Any) -> str:
