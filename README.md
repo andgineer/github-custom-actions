@@ -26,6 +26,7 @@ if __name__ == "__main__":
 # Documentation
 
 [Github Custom Actions](https://andgineer.github.io/github-custom-actions/)
+[Create Your Own GitHub Action in 5 Minutes](https://sorokin.engineer/posts/en/github-custom-actions.html)
 
 # Developers
 
