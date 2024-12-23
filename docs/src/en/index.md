@@ -2,7 +2,7 @@
 
 Python package for creating [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions). 
 
-It works with Python 3.7 and up, so even those dusty old self-hosted action runners can 
+It works with Python 3.8 and up, so even those dusty old self-hosted action runners can 
 handle it like champs.
 
 ### Quick start
