@@ -3,7 +3,9 @@
 Библиотека упрощающая создание
 [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions).
 
-Может работать даже с Python 3.8 чтобы поддерживать древние self-hosted action runners.
+[Как создать свой GitHub Action за 5 минут](https://sorokin.engineer/posts/ru/github-custom-actions.html).
+
+Библиотека может работать даже с Python 3.8 чтобы поддерживать древние self-hosted action runners.
 
 ### Быстрый старт
 
