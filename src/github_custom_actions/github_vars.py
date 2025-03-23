@@ -19,7 +19,8 @@ class GithubVars(EnvAttrDictVars):
        print(action.env.github_repository)
        ```
 
-    Thanks to the docstrings your IDE will provide you with doc hints when you hover over the property.
+    Thanks to the docstrings your IDE will provide you with doc hints when
+    you hover over the property.
     We do not load the attributes on the class init but do it Lazily.
     Once read, the value is stored in the instance dictionary and is not extracted from env anymore.
 
@@ -49,7 +50,8 @@ class GithubVars(EnvAttrDictVars):
     github_action_path: Path
     """The path where an action is located. This property is only supported in composite actions.
     You can use this path to change directories to where the action is located and access other
-    files in that same repository. For example, /home/runner/work/_actions/repo-owner/name-of-action-repo/v1."""
+    files in that same repository. For example,
+    /home/runner/work/_actions/repo-owner/name-of-action-repo/v1."""
 
     github_action_repository: str
     """For a step executing an action, this is the owner and repository name of the action.
@@ -77,7 +79,8 @@ class GithubVars(EnvAttrDictVars):
     github_env: str
     """The path on the runner to the file that sets variables from workflow commands.
     This file is unique to the current step and changes for each step in a job.
-    For example, /home/runner/work/_temp/_runner_file_commands/set_env_87406d6e-4979-4d42-98e1-3dab1f48b13a.
+    For example,
+    /home/runner/work/_temp/_runner_file_commands/set_env_87406d6e-4979-4d42-98e1-3dab1f48b13a.
     For more information, see "Workflow commands for GitHub Actions"."""
 
     github_event_name: str
@@ -99,16 +102,17 @@ class GithubVars(EnvAttrDictVars):
     """The job_id of the current job. For example, greeting_job."""
 
     github_output: Path
-    """The path on the runner to the file that sets the current step's outputs from workflow commands.
+    """The path on the runner to the file that sets the current step's outputs from
+    workflow commands.
     This file is unique to the current step and changes for each step in a job.
-    For example, 
+    For example,
     /home/runner/work/_temp/_runner_file_commands/set_output_a50ef383-b063-46d9-9157-57953fc9f3f0.
     For more information, see "Workflow commands for GitHub Actions"."""
 
     github_path: Path
     """The path on the runner to the file that sets system PATH variables from workflow commands.
     This file is unique to the current step and changes for each step in a job.
-    For example, 
+    For example,
     /home/runner/work/_temp/_runner_file_commands/add_path_899b9445-ad4a-400c-aa89-249f18632cf5.
     For more information, see "Workflow commands for GitHub Actions"."""
 
@@ -176,7 +180,7 @@ class GithubVars(EnvAttrDictVars):
     github_step_summary: Path
     """The path on the runner to the file that contains job summaries from workflow commands.
     This file is unique to the current step and changes for each step in a job.
-    For example, 
+    For example,
     /home/runner/_layout/_work/_temp/_runner_file_commands/step_summary_1cb22d7f-5663-41a8-
     9ffc-13472605c76c. For more information, see "Workflow commands for GitHub Actions"."""
 
@@ -191,7 +195,8 @@ class GithubVars(EnvAttrDictVars):
     a name, the value of this variable is the full path of the workflow file in the repository."""
 
     github_workflow_ref: str
-    """The ref path to the workflow. For example, octocat/hello-world/.github/workflows/my-workflow.yml@
+    """The ref path to the workflow. For example,
+    octocat/hello-world/.github/workflows/my-workflow.yml@
     refs/heads/my_branch."""
 
     github_workflow_sha: str
@@ -199,11 +204,12 @@ class GithubVars(EnvAttrDictVars):
 
     github_workspace: Path
     """The default working directory on the runner for steps, and the default location of your
-    repository when using the checkout action. For example, 
+    repository when using the checkout action. For example,
     /home/runner/work/my-repo-name/my-repo-name."""
 
     runner_arch: str
-    """The architecture of the runner executing the job. Possible values are X86, X64, ARM, or ARM64."""
+    """The architecture of the runner executing the job. Possible values are X86, X64, ARM,
+    or ARM64."""
 
     runner_debug: str
     """This is set only if debug logging is enabled, and always has the value of 1. It can be useful
@@ -215,7 +221,8 @@ class GithubVars(EnvAttrDictVars):
     For example, Hosted Agent"""
 
     runner_os: str
-    """The operating system of the runner executing the job. Possible values are Linux, Windows, or macOS.
+    """The operating system of the runner executing the job. Possible values are Linux, Windows,
+    or macOS.
     For example, Windows"""
 
     runner_temp: Path

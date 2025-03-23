@@ -2,6 +2,7 @@ import os
 import typing
 from pathlib import Path
 from typing import Any
+
 from github_custom_actions.attr_dict_vars import AttrDictVars
 
 
@@ -25,7 +26,8 @@ class EnvAttrDictVars(AttrDictVars):
        print(vars.documented_var)  # from os.environ["INPUT_DOCUMENTED-VAR"]
        ```
 
-    Attribute names are converted with the method `_attr_to_var_name()` - it converts Python attribute
+    Attribute names are converted with the method `_attr_to_var_name()` -
+    it converts Python attribute
     names from snake_case to kebab-case.
     """
 
@@ -33,7 +35,7 @@ class EnvAttrDictVars(AttrDictVars):
         try:
             return super().__getattribute__(name)
         except AttributeError as exc:
-            type_hints = self.__class__._get_type_hints()
+            type_hints = self.__class__.get_type_hints()
             if name not in type_hints:
                 raise AttributeError(f"Unknown {name}") from exc
             env_var_name = self._external_name(self._attr_to_var_name(name))
@@ -46,7 +48,7 @@ class EnvAttrDictVars(AttrDictVars):
                 self.__dict__[name] = value
                 return value
             raise AttributeError(
-                f"`{name}` ({env_var_name}) not found in environment variables"
+                f"`{name}` ({env_var_name}) not found in environment variables",
             ) from exc
 
     def __getitem__(self, key: str) -> Any:

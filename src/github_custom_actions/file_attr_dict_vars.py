@@ -1,6 +1,7 @@
 from collections.abc import MutableMapping
 from pathlib import Path
-from typing import Dict, Iterator, List, Optional, Any
+from typing import Any, Dict, Iterator, List, Optional
+
 from github_custom_actions.attr_dict_vars import AttrDictVars
 
 
@@ -52,7 +53,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
         try:
             return object.__getattribute__(self, name)
         except AttributeError as exc:
-            type_hints = self.__class__._get_type_hints()
+            type_hints = self.__class__.get_type_hints()
             if name in type_hints:
                 var_name = self._attr_to_var_name(name)
                 value = self[var_name]
@@ -82,7 +83,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
 
         vars.key = "value"
         """
-        type_hints = self.__class__._get_type_hints()
+        type_hints = self.__class__.get_type_hints()
         if not name.startswith("_"):
             if name not in type_hints:
                 raise AttributeError(f"Unknown {name}")
@@ -111,9 +112,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
                 content = self._vars_file.read_text(encoding="utf-8")
                 self._var_keys_cache = {
                     self._name_from_external(k): v
-                    for k, v in (
-                        line.split("=", 1) for line in content.splitlines() if "=" in line
-                    )
+                    for k, v in (line.split("=", 1) for line in content.splitlines() if "=" in line)
                 }
             except FileNotFoundError:
                 self._var_keys_cache = {}

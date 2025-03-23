@@ -13,12 +13,12 @@ def test_action_base_summary(action):
 
 class MockInputs(ActionInputs):
     test_input: str
-    '''Test input description'''
+    """Test input description"""
 
 
 class MockOutputs(ActionOutputs):
     test_output: str
-    '''Test output description'''
+    """Test output description"""
 
 
 class MockAction(ActionBase):
@@ -31,12 +31,15 @@ class MockAction(ActionBase):
 
 @pytest.fixture
 def mock_env_vars():
-    with patch.dict(os.environ, {
-        "GITHUB_OUTPUT": "/tmp/github_output",
-        "GITHUB_STEP_SUMMARY": "/tmp/github_step_summary",
-        "RUNNER_OS": "Linux",
-        # Add other required environment variables here
-    }):
+    with patch.dict(
+        os.environ,
+        {
+            "GITHUB_OUTPUT": "/tmp/github_output",
+            "GITHUB_STEP_SUMMARY": "/tmp/github_step_summary",
+            "RUNNER_OS": "Linux",
+            # Add other required environment variables here
+        },
+    ):
         yield
 
 
@@ -58,13 +61,13 @@ def test_main_method(test_action):
 
 
 def test_run_method_success(test_action):
-    with patch.object(test_action, 'main') as mock_main:
+    with patch.object(test_action, "main") as mock_main:
         test_action.run()
         mock_main.assert_called_once()
 
 
 def test_run_method_failure(test_action):
-    with patch.object(test_action, 'main', side_effect=Exception("Test exception")):
+    with patch.object(test_action, "main", side_effect=Exception("Test exception")):
         with pytest.raises(SystemExit) as exc_info:
             test_action.run()
         assert exc_info.value.code == 1
@@ -75,7 +78,9 @@ def test_render_method(test_action):
     test_action.outputs.test_output = "Result"
     test_action.env.runner_os = "Linux"
 
-    template = "Hello, {{ inputs.test_input }}! Output: {{ outputs.test_output }}. OS: {{ env.runner_os }}"
+    template = (
+        "Hello, {{ inputs.test_input }}! Output: {{ outputs.test_output }}. OS: {{ env.runner_os }}"
+    )
     result = test_action.render(template)
     assert result == "Hello, User! Output: Result. OS: Linux"
 
@@ -88,7 +93,9 @@ def test_render_template_method(test_action):
     mock_template = MagicMock()
     mock_template.render.return_value = "Rendered template"
 
-    with patch.object(test_action.environment, 'get_template', return_value=mock_template) as mock_get_template:
+    with patch.object(
+        test_action.environment, "get_template", return_value=mock_template
+    ) as mock_get_template:
         result = test_action.render_template("test_template.j2", extra_var="Extra")
 
         mock_get_template.assert_called_once_with("test_template.j2")
@@ -96,7 +103,7 @@ def test_render_template_method(test_action):
             env=test_action.env,
             inputs=test_action.inputs,
             outputs=test_action.outputs,
-            extra_var="Extra"
+            extra_var="Extra",
         )
         assert result == "Rendered template"
 
@@ -109,7 +116,7 @@ def test_file_text_property(test_action, tmp_path, file_exists):
     if file_exists:
         test_file.write_text(test_content)
 
-    with patch.object(test_action.env, 'github_step_summary', test_file):
+    with patch.object(test_action.env, "github_step_summary", test_file):
         if file_exists:
             assert test_action.summary == test_content
         else:

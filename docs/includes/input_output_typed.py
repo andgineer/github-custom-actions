@@ -25,11 +25,8 @@ class MyAction(ActionBase):
             raise ValueError("my-path is required")
         self.inputs.my_path.mkdir(exist_ok=True)
         self.outputs.runner_os = self.env.runner_os
-        self.summary.text += (
-            self.render(
-                "### {{ inputs.my_input }}.\n"
-                "Have a nice day, {{ inputs['name'] }}!"
-            )
+        self.summary.text += self.render(
+            "### {{ inputs.my_input }}.\nHave a nice day, {{ inputs['name'] }}!",
         )
 
 

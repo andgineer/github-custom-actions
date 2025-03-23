@@ -21,7 +21,7 @@
     First, install Python if it's not already installed.
 
     In the command prompt, type (if Python was installed from the Microsoft Store, use `python3` instead of `python`):
-    
+
     ```bash
     python -m pip install --user pipx
     ```

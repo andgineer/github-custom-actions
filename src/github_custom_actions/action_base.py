@@ -3,10 +3,10 @@ import traceback
 from pathlib import Path
 from typing import Any, get_type_hints
 
-from jinja2 import Template, Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, Template
 
-from github_custom_actions.inputs_outputs import ActionOutputs, ActionInputs
 from github_custom_actions.github_vars import GithubVars
+from github_custom_actions.inputs_outputs import ActionInputs, ActionOutputs
 
 
 class FileTextProperty:
@@ -43,7 +43,8 @@ class ActionBase:
     You can define custom inputs and / or outputs types in the subclass.
     You can do nothing in the subclass if you don't need typed inputs and outputs.
 
-    Note these are just types, instances of these types are automatically created in the `__init__` method.
+    Note these are just types, instances of these types are automatically created
+    in the `__init__` method.
 
     Usage:
     ```python
@@ -92,7 +93,7 @@ class ActionBase:
 
         base_dir = Path(__file__).resolve().parent
         templates_dir = base_dir / "templates"
-        self.environment = Environment(loader=FileSystemLoader(str(templates_dir)))
+        self.environment = Environment(loader=FileSystemLoader(str(templates_dir)))  # noqa: S701
 
     summary = FileTextProperty("github_step_summary")
 
@@ -119,7 +120,7 @@ class ActionBase:
         """
         try:
             self.main()
-        except Exception:  # pylint: disable=broad-except
+        except Exception:  # noqa: BLE001
             traceback.print_exc(file=sys.stderr)
             sys.exit(1)
 

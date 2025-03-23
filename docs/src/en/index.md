@@ -1,10 +1,10 @@
 # github-custom-actions
 
-Python package for creating [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions). 
+Python package for creating [custom GitHub Actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions).
 
 [How to Create Your Own GitHub Action in 5 Minutes](https://sorokin.engineer/posts/en/github-custom-actions.html).
 
-The package works with Python 3.8 and up, so even those dusty old self-hosted action runners can 
+The package works with Python 3.8 and up, so even those dusty old self-hosted action runners can
 handle it like champs.
 
 ### Quick start
@@ -13,14 +13,14 @@ handle it like champs.
 --8<-- "quick_start.py"
 ```
 
-This example uses the [runner_os][github_custom_actions.GithubVars.runner_os] 
-variable from 
-[GitHub environment variables][github_custom_actions.GithubVars]. 
-All variables from the GitHub environment are available in the `env`, 
+This example uses the [runner_os][github_custom_actions.GithubVars.runner_os]
+variable from
+[GitHub environment variables][github_custom_actions.GithubVars].
+All variables from the GitHub environment are available in the `env`,
 with descriptions shown in your IDE on mouse hover:
 ![var_ide_hover_docstring.jpg](images/var_ide_hover_docstring.jpg)
 
-The action gets a value from the `my-input` [action input](inputs) and renders 
+The action gets a value from the `my-input` [action input](inputs) and renders
 it in the action [step summary](summary) on the GitHub build summary.
 
 It also returns a value to the `runner-os` [action output](outputs).
@@ -38,7 +38,7 @@ With explicitly defined inputs and outputs, you can use typo-checked code autoco
 Note that you only define the types of inputs and outputs, and instances are created automatically
 upon [ActionBase](base) initialization.
 
-Now you can utilize the attributes defined in the `inputs` and `outputs` classes of the action. 
+Now you can utilize the attributes defined in the `inputs` and `outputs` classes of the action.
 All attributes names are converted to `kebab-case`, allowing dot notation like `inputs.my_input`
 to replace the `inputs['my-input']`.
 

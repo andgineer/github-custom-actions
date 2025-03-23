@@ -6,9 +6,9 @@ So no fancy features like walrus operator, @cached_property, etc.
 
 import os
 from pathlib import Path
-from github_custom_actions.file_attr_dict_vars import FileAttrDictVars
-from github_custom_actions.env_attr_dict_vars import EnvAttrDictVars
 
+from github_custom_actions.env_attr_dict_vars import EnvAttrDictVars
+from github_custom_actions.file_attr_dict_vars import FileAttrDictVars
 
 INPUT_PREFIX = "INPUT_"
 
@@ -26,7 +26,8 @@ class ActionInputs(EnvAttrDictVars):
         print(action.inputs["my-input"])  # the same as above
         ```
 
-    With attributes, you can only access explicitly declared vars, with dict-like access you can access any var.
+    With attributes, you can only access explicitly declared vars, with dict-like access
+    you can access any var.
     This way you can find your balance between strictly defined vars and flexibility.
 
     Attribute names are converted to `kebab-case`.
@@ -36,9 +37,10 @@ class ActionInputs(EnvAttrDictVars):
     use dict-style only: `action.inputs["my_input"]`.
     But it's common to use `kebab-case` in GitHub Actions input names.
 
-    By GitHub convention, all input names are upper-cased in the environment and prefixed with "INPUT_".
-    So `actions.inputs.my_input` or `actions.inputs['my-input']` will be the variable `INPUT_MY-INPUT`
-    in the environment.
+    By GitHub convention, all input names are upper-cased in the environment
+    and prefixed with "INPUT_".
+    So `actions.inputs.my_input` or `actions.inputs['my-input']` will be the variable
+    `INPUT_MY-INPUT` in the environment.
     The ActionInputs does the conversion automatically.
 
     Uses lazy loading of the values.

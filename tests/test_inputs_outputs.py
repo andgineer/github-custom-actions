@@ -1,4 +1,3 @@
-from github_custom_actions.action_base import ActionBase
 import pytest
 
 

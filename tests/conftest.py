@@ -12,9 +12,9 @@ def inputs():
         input_env = {
             "INPUT_MY-INPUT": "value1",
             "INPUT_ANOTHER-INPUT": "value2",
-            "GITHUB_STEP_SUMMARY": str(Path(temp_dir) / "summary.txt")
+            "GITHUB_STEP_SUMMARY": str(Path(temp_dir) / "summary.txt"),
         }
-        with patch.dict('os.environ', input_env):
+        with patch.dict("os.environ", input_env):
             yield
 
 
@@ -22,10 +22,8 @@ def inputs():
 def outputs():
     with tempfile.TemporaryDirectory() as temp_dir:
         github_output = Path(temp_dir) / "output.txt"
-        output_env = {
-            "GITHUB_OUTPUT": str(github_output)
-        }
-        with patch.dict('os.environ', output_env):
+        output_env = {"GITHUB_OUTPUT": str(github_output)}
+        with patch.dict("os.environ", output_env):
             yield github_output
 
 

@@ -1,5 +1,4 @@
 import pytest
-from pathlib import Path
 from github_custom_actions.file_attr_dict_vars import FileAttrDictVars
 
 
@@ -79,6 +78,7 @@ def test_file_attr_dict_vars_unexisted_attribute(temp_vars_file):
 
     with pytest.raises(AttributeError):
         vars.undocumented_var = "value1"
+
 
 def test_file_attr_dict_vars_iterator(temp_vars_file):
     class MyFileAttrDictVars(FileAttrDictVars):

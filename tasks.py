@@ -1,14 +1,14 @@
 import shutil
+import subprocess
 import sys
 
-from invoke import task, Context, Collection
-import subprocess
+from invoke import Collection, Context, task
 
 
 def get_allowed_doc_languages():
     build_docs_file_name = "scripts/build-docs.sh"
     try:
-        with open(build_docs_file_name, "r") as f:
+        with open(build_docs_file_name) as f:
             for line in f:
                 if "for lang in" in line:
                     langs = line.split("in")[1].strip().split(";")[0].split()
@@ -23,9 +23,9 @@ ALLOWED_VERSION_TYPES = ["release", "bug", "feature"]
 
 
 @task
-def version(c: Context):
+def version(_c: Context):
     """Show the current version."""
-    with open("src/github-custom-actions/__about__.py", "r") as f:
+    with open("src/github_custom_actions/__about__.py") as f:
         version_line = f.readline()
         version_num = version_line.split('"')[1]
         print(version_num)
@@ -54,6 +54,7 @@ def compile_requirements(c: Context):
     print(f"Total execution time: {int(end_time) - int(start_time)} seconds")
 
     c.run("scripts/include_pyproject_requirements.py requirements.in")
+
 
 @task(pre=[compile_requirements])
 def reqs(c: Context):
