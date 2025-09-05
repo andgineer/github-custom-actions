@@ -1,7 +1,7 @@
 import sys
 import traceback
 from pathlib import Path
-from typing import Any, get_type_hints
+from typing import Any, Optional, Type, get_type_hints
 
 from jinja2 import Environment, FileSystemLoader, Template
 
@@ -19,7 +19,7 @@ class FileTextProperty:
         """
         self.var_name = var_name
 
-    def __get__(self, obj: Any, objtype: Any = None) -> str:
+    def __get__(self, obj: Any, objtype: Optional[Type[Any]] = None) -> str:
         path = getattr(obj.env, self.var_name)
         try:
             return path.read_text()  # type: ignore

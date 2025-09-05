@@ -1,11 +1,11 @@
 import typing
-from typing import Any, Dict
+from typing import Any, Dict, Type
 
 
 class AttrDictVars:
     """Common base class for accessing variables as attributes or dict."""
 
-    _type_hints_cache: Dict[str, Dict[str, Any]] = {}
+    _type_hints_cache: Dict[str, Dict[str, Type[Any]]] = {}
 
     @classmethod
     def get_type_hints(cls) -> Dict[str, Any]:
