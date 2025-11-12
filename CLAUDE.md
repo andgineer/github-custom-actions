@@ -8,43 +8,43 @@ This is a Python package for creating custom GitHub Actions. The main entry poin
 
 ## Development Setup
 
-Source code is in `src/github_custom_actions/`, tests in `tests/`. Always run `. ./activate.sh` before development to set up the environment.
+Source code is in `src/github_custom_actions/`, tests in `tests/`. Always run `source ./activate.sh` before development to set up the environment.
+
+**IMPORTANT**: Always activate the virtual environment before running any commands. Use `source ./activate.sh` before each command.
 
 ## Common Commands
 
 ### Testing
 ```bash
-python -m pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=src tests/
+source ./activate.sh && python -m pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=src tests/
 ```
 
 ### Linting and Type Checking
 ```bash
-source activate.sh   # Always run this first before any development commands
-invoke pre           # Run pre-commit checks (ruff + mypy)
-ruff check --fix    # Run ruff linter with fixes
+source ./activate.sh && invoke pre           # Run pre-commit checks (ruff + mypy)
 ```
 
-**Important**: Always run `source activate.sh` before any development commands. Never run `mypy` directly - use `invoke pre` instead.
+**IMPORTANT**: Always use `invoke pre` or `pre-commit run --all-files` for code quality checks. Never run ruff or mypy directly.
 
 ### Requirements Management
 ```bash
-invoke reqs                    # Upgrade requirements and install
-invoke compile-requirements   # Compile requirements.in to requirements.txt
+source ./activate.sh && invoke reqs                    # Upgrade requirements and install
+source ./activate.sh && invoke compile-requirements   # Compile requirements.in to requirements.txt
 ```
 
 ### Building and Publishing
 ```bash
-python -m build              # Build package
-invoke version              # Show current version
-invoke ver-release          # Bump release version
-invoke ver-feature          # Bump feature version
-invoke ver-bug             # Bump bug fix version
+source ./activate.sh && python -m build              # Build package
+source ./activate.sh && invoke version              # Show current version
+source ./activate.sh && invoke ver-release          # Bump release version
+source ./activate.sh && invoke ver-feature          # Bump feature version
+source ./activate.sh && invoke ver-bug             # Bump bug fix version
 ```
 
 ### Documentation
 ```bash
-invoke docs-en    # Start docs server and open browser
-invoke docs-ru    # Russian docs preview
+source ./activate.sh && invoke docs-en    # Start docs server and open browser
+source ./activate.sh && invoke docs-ru    # Russian docs preview
 ```
 
 ## Core Architecture
