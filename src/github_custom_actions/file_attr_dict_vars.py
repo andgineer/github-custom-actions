@@ -75,6 +75,11 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
 
         vars["key"] = "value"
         """
+        if "\n" in value or "\r" in value:
+            raise ValueError(
+                "GitHub outputs must be single-line strings; "
+                f"value for '{key}' contains newline characters.",
+            )
         self._get_var_keys[key] = value
         self._save_var_file()
 

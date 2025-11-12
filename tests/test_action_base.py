@@ -11,6 +11,11 @@ def test_action_base_summary(action):
     assert action.env.github_step_summary.read_text() == "test1"
 
 
+def test_outputs_single_line_constraint(test_action):
+    with pytest.raises(ValueError, match="single-line"):
+        test_action.outputs.test_output = "line1\nline2"
+
+
 class MockInputs(ActionInputs):
     test_input: str
     """Test input description"""
