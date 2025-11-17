@@ -1,7 +1,8 @@
 import sys
 import traceback
+from functools import partialmethod
 from pathlib import Path
-from typing import Any, Optional, Type, get_type_hints
+from typing import Any, Literal, Optional, Type, get_type_hints
 
 from jinja2 import Environment, FileSystemLoader, Template
 
@@ -93,7 +94,9 @@ class ActionBase:
 
         base_dir = Path(__file__).resolve().parent
         templates_dir = base_dir / "templates"
-        self.environment = Environment(loader=FileSystemLoader(str(templates_dir)))  # noqa: S701
+        self.environment = Environment(  # noqa: S701
+            loader=FileSystemLoader(str(templates_dir)),
+        )
 
     summary = FileTextProperty("github_step_summary")
 
@@ -123,6 +126,47 @@ class ActionBase:
         except Exception:  # noqa: BLE001
             traceback.print_exc(file=sys.stderr)
             sys.exit(1)
+
+    @staticmethod
+    def debug(message: str):
+        """
+        Emits a debug message. The runner needs to be invoked with enabled debug
+        logging to show these.
+        """
+        print(f"::debug::{message}")
+
+    def message(  # noqa: PLR0913
+        self,
+        severity: Literal["error", "notice", "warning"],
+        message: str,
+        title: Optional[str] = None,
+        file: Optional[str] = None,
+        line: Optional[int] = None,
+        column: Optional[int] = None,
+        end_line: Optional[int] = None,
+        end_column: Optional[int] = None,
+    ):
+        """
+        Emits a message at the given `severity` level. The keyword arguments can be used
+        to generate annotations that will be displayed within the Review section of a
+        Pull Request. Refer to the messages related section in the
+        [workflows commands reference](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands)
+        for semantic details.
+
+        There are also the methods `error_message`, `notice_message` and
+        `warning_message` as shortcuts.
+        """
+        _locals = locals().copy()
+        parameters = ",".join(
+            f"{x}={value}"
+            for x in ("title", "file", "line", "column", "end_line", "end_column")
+            if (value := _locals[x]) is not None
+        )
+        print(f"::{severity}{(' ' + parameters) if parameters else ''}::{message}")
+
+    error_message = partialmethod(message, "error")
+    notice_message = partialmethod(message, "notice")
+    warning_message = partialmethod(message, "warning")
 
     def render(self, template: str, **kwargs: Any) -> str:
         """Render the template from the string with Jinja.
@@ -158,4 +202,9 @@ class ActionBase:
         ```
         """
         template = self.environment.get_template(template_name)
-        return template.render(env=self.env, inputs=self.inputs, outputs=self.outputs, **kwargs)
+        return template.render(
+            env=self.env,
+            inputs=self.inputs,
+            outputs=self.outputs,
+            **kwargs,
+        )
