@@ -33,9 +33,11 @@ if __name__ == "__main__":
 Do not forget to run `. ./activate.sh`.
 
 # Scripts
-Install [invoke](https://docs.pyinvoke.org/en/stable/) preferably with [pipx](https://pypa.github.io/pipx/):
 
-    pipx install invoke
+Install [invoke](https://docs.pyinvoke.org/en/stable/) and [pre-commit](https://pre-commit.com/)
+preferably with [pipx](https://pypa.github.io/pipx/):
+
+    pipx install invoke pre-commit
 
 For a list of available scripts run:
 
