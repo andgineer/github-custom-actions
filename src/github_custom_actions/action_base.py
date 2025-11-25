@@ -132,6 +132,12 @@ class ActionBase:
         """
         Emits a debug message. The runner needs to be invoked with enabled debug
         logging to show these.
+
+        Example usage:
+
+        ```python
+        self.debug("Action invoked.")
+        ```
         """
         print(f"::debug::{message}")
 
@@ -155,6 +161,23 @@ class ActionBase:
 
         There are also the methods `error_message`, `notice_message` and
         `warning_message` as shortcuts.
+
+        Example usages:
+
+        ```python
+        self.message("warning", "Deprecated input used: pattern")
+        # or equivalently:
+        self.warning_message("Deprecated input used: pattern")
+
+        self.error_message(
+            "Value exceeds limit.",
+            title="Schema error",
+            file="config.yml",
+            line=7,
+            column=42
+        )
+        ```
+
         """
         _locals = locals().copy()
         parameters = ",".join(
