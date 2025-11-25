@@ -141,8 +141,8 @@ class ActionBase:
         """
         print(f"::debug::{message}")
 
+    @staticmethod
     def message(  # noqa: PLR0913
-        self,
         severity: Literal["error", "notice", "warning"],
         message: str,
         title: Optional[str] = None,
