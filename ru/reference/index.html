@@ -1,0 +1,4340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Andrey Sorokin">
+      
+      
+        <link rel="canonical" href="https://andgineer.github.io/github-custom-actions/reference/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/github-custom-actions/" hreflang="en">
+        
+          <link rel="alternate" href="/github-custom-actions/ru/" hreflang="ru">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Reference - github_custom_actions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github_custom_actions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="github_custom_actions" class="md-header__button md-logo" aria-label="github_custom_actions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            github_custom_actions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/github-custom-actions/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/github-custom-actions/ru/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andgineer/github-custom-actions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github_custom_actions
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="github_custom_actions" class="md-nav__button md-logo" aria-label="github_custom_actions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    github_custom_actions
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andgineer/github-custom-actions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github_custom_actions
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    github-custom-actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github_env_vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переменные окружения GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    main()
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../render/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Reference</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="github_custom_actions" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions</span>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Python package for creating custom GitHub Actions.</p>
+<p>The file is mandatory for build system to find the package.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="github_custom_actions-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="github_custom_actions.ActionBase" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.ActionBase</span>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Base class for GitHub Actions.</p>
+<p>You should implement <code>main()</code> method in the subclass.</p>
+<p>You can define custom inputs and / or outputs types in the subclass.
+You can do nothing in the subclass if you don't need typed inputs and outputs.</p>
+<p>Note these are just types, instances of these types are automatically created
+in the <code>__init__</code> method.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyInputs</span><span class="p">(</span><span class="n">ActionInputs</span><span class="p">):</span>
+    <span class="n">my_input</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;My input description&#39;&#39;&#39;</span>
+
+    <span class="n">my_path</span><span class="p">:</span> <span class="n">Path</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;My path description&#39;&#39;&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyOutputs</span><span class="p">(</span><span class="n">ActionOutputs</span><span class="p">):</span>
+    <span class="n">runner_os</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Runner OS description&#39;&#39;&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyAction</span><span class="p">(</span><span class="n">ActionBase</span><span class="p">):</span>
+    <span class="n">inputs</span><span class="p">:</span> <span class="n">MyInputs</span>
+    <span class="n">outputs</span><span class="p">:</span> <span class="n">MyOutputs</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;my-path is required&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">runner_os</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">runner_os</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span>
+                <span class="s2">&quot;### {{ inputs.my_input }}.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;Have a nice day, {{ inputs[&#39;name&#39;] }}!&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">MyAction</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h5 id="github_custom_actions.ActionBase-attributes">Attributes</h5>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.env" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.env</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">env</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.github_vars.GithubVars" href="#github_custom_actions.github_vars.GithubVars">GithubVars</a></span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.github_vars.GithubVars" href="#github_custom_actions.github_vars.GithubVars">GithubVars</a></span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.environment" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.environment</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">environment</span> <span class="o">=</span> <span class="n"><span title="jinja2.Environment">Environment</span></span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n"><span title="jinja2.FileSystemLoader">FileSystemLoader</span></span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">templates_dir</span><span class="p">)))</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.error_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.error_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">error_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.inputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.inputs</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">inputs</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.inputs_outputs.ActionInputs" href="#github_custom_actions.inputs_outputs.ActionInputs">ActionInputs</a></span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="s1">&#39;inputs&#39;</span><span class="p">]()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.notice_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.notice_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">notice_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;notice&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.outputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.outputs</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">outputs</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.inputs_outputs.ActionOutputs" href="#github_custom_actions.inputs_outputs.ActionOutputs">ActionOutputs</a></span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="s1">&#39;outputs&#39;</span><span class="p">]()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.summary" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.summary</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">summary</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.FileTextProperty" href="#github_custom_actions.action_base.FileTextProperty">FileTextProperty</a></span><span class="p">(</span><span class="s1">&#39;github_step_summary&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.ActionBase.warning_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.ActionBase.warning_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">warning_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<h5 id="github_custom_actions.ActionBase-functions">Functions</h5>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.debug" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.debug</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">debug</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Emits a debug message. The runner needs to be invoked with enabled debug
+logging to show these.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Action invoked.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.main" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.main</span>
+
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Business logic of the action.</p>
+<p>Is called by <code>run()</code> method.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">message</span><span class="p">(</span><span class="n">severity</span><span class="p">:</span> <span class="n"><span title="typing.Literal">Literal</span></span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;notice&#39;</span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span><span class="p">],</span> <span class="n">message</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_line</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_column</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Emits a message at the given <code>severity</code> level. The keyword arguments can be used
+to generate annotations that will be displayed within the Review section of a
+Pull Request. Refer to the messages related section in the
+<a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands">workflows commands reference</a>
+for semantic details.</p>
+<p>There are also the methods <code>error_message</code>, <code>notice_message</code> and
+<code>warning_message</code> as shortcuts.</p>
+<p>Example usages:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="s2">&quot;Deprecated input used: pattern&quot;</span><span class="p">)</span>
+<span class="c1"># or equivalently:</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">warning_message</span><span class="p">(</span><span class="s2">&quot;Deprecated input used: pattern&quot;</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">error_message</span><span class="p">(</span>
+    <span class="s2">&quot;Value exceeds limit.&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Schema error&quot;</span><span class="p">,</span>
+    <span class="n">file</span><span class="o">=</span><span class="s2">&quot;config.yml&quot;</span><span class="p">,</span>
+    <span class="n">line</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="n">column</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.render" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.render</span>
+
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">render</span><span class="p">(</span><span class="n">template</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Render the template from the string with Jinja.</p>
+<p><code>kwargs</code> are the template context variables.</p>
+<p>Also includes to the context the action's <code>inputs</code>, <code>outputs</code>, and <code>env</code>.</p>
+<p>So you can use something like:
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;### {{ inputs.name }}!</span><span class="se">\n</span><span class="s2">Have a nice day!&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.render_template" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.render_template</span>
+
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">render_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Render template from the <code>templates</code> directory.</p>
+<p><code>template_name</code> is the name of the template file without the extension.
+<code>kwargs</code> are the template context variables.</p>
+<p>Also includes to the context the action's <code>inputs</code>, <code>outputs</code>, and <code>env</code>.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;executor.json&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s2">&quot;ubuntu-latest&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h6 id="github_custom_actions.ActionBase.run" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.ActionBase.run</span>
+
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Run the action.</p>
+<p><code>run()</code> calls the <code>main()</code> method of the action with the necessary boilerplate to catch and
+report exceptions.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">MyAction</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+<p><code>main()</code> is where you implement the business logic of your action.</p>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="github_custom_actions.ActionInputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.ActionInputs</span>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.env_attr_dict_vars.EnvAttrDictVars" href="#github_custom_actions.env_attr_dict_vars.EnvAttrDictVars">EnvAttrDictVars</a></code></p>
+
+
+        <p>GitHub Action input variables.</p>
+<p>Usage:
+    <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyInputs</span><span class="p">(</span><span class="n">ActionInputs</span><span class="p">):</span>
+    <span class="n">my_input</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">ActionBase</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">MyInputs</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;my-input&quot;</span><span class="p">])</span>  <span class="c1"># the same as above</span>
+</code></pre></div></p>
+<p>With attributes, you can only access explicitly declared vars, with dict-like access
+you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Attribute names are converted to <code>kebab-case</code>.
+So <code>action.inputs.my_input</code> is the same as <code>action.inputs["my-input"]</code>.</p>
+<p>If you need to access a <code>snake_case</code> named input <code>my_input</code>, you should
+use dict-style only: <code>action.inputs["my_input"]</code>.
+But it's common to use <code>kebab-case</code> in GitHub Actions input names.</p>
+<p>By GitHub convention, all input names are upper-cased in the environment
+and prefixed with "INPUT_".
+So <code>actions.inputs.my_input</code> or <code>actions.inputs['my-input']</code> will be the variable
+<code>INPUT_MY-INPUT</code> in the environment.
+The ActionInputs does the conversion automatically.</p>
+<p>Uses lazy loading of the values.
+So the value is read from the environment only when accessed and only once,
+and saved in the object's internal dict.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="github_custom_actions.ActionOutputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.ActionOutputs</span>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.file_attr_dict_vars.FileAttrDictVars" href="#github_custom_actions.file_attr_dict_vars.FileAttrDictVars">FileAttrDictVars</a></code></p>
+
+
+        <p>GitHub Actions output variables.</p>
+<p>Usage:
+   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyOutputs</span><span class="p">(</span><span class="n">ActionOutputs</span><span class="p">):</span>
+    <span class="n">my_output</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">ActionBase</span><span class="p">(</span><span class="n">outputs</span><span class="o">=</span><span class="n">MyOutputs</span><span class="p">())</span>
+<span class="n">action</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;my-output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>
+<span class="n">action</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">my_output</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>  <span class="c1"># the same as above</span>
+</code></pre></div></p>
+<p>With attributes, you can only access explicitly declared vars,
+with dict-like access you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Attribute names are converted to <code>kebab-case</code>.
+So <code>action.outputs.my_output</code> is the same as <code>action.outputs["my-output"]</code>.</p>
+<p>If you need to access a <code>snake_case</code> named output like <code>my_output</code> you should
+use dict-style only: <code>action.outputs["my_output"]</code>.
+But it's common to use <code>kebab-case</code> in GitHub Actions output names.</p>
+<p>Each output var assignment changes the GitHub outputs file
+(the path is defined as <code>action.env.github_output</code>).</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="github_custom_actions.GithubVars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.GithubVars</span>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.env_attr_dict_vars.EnvAttrDictVars" href="#github_custom_actions.env_attr_dict_vars.EnvAttrDictVars">EnvAttrDictVars</a></code></p>
+
+
+        <p>GitHub Action environment variables.</p>
+<p>https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables</p>
+<p>Usage:
+   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyAction</span><span class="p">:</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">GithubVars</span><span class="p">()</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">MyAction</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">github_repository</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Thanks to the docstrings your IDE will provide you with doc hints when
+you hover over the property.
+We do not load the attributes on the class init but do it Lazily.
+Once read, the value is stored in the instance dictionary and is not extracted from env anymore.</p>
+<p>Converts attribute names to uppercase.
+Leave dict-style names unchanged.</p>
+<p>Paths and files have type Path.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h5 id="github_custom_actions.GithubVars-attributes">Attributes</h5>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.CI" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.CI</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">CI</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Always set to true.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_action" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_action</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the action currently running, or the id of a step.
+For example, for an action, __repo-owner_name-of-action-repo.
+GitHub removes special characters, and uses the name __run when the current step runs a script
+without an id. If you use the same script or action more than once in the same job, the name
+will include a suffix that consists of the sequence number preceded by an underscore. For
+example, the first script you run will have the name __run, and the second script will be
+named __run_2. Similarly, the second invocation of actions/checkout will be actionscheckout2.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_action_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_action_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path where an action is located. This property is only supported in composite actions.
+You can use this path to change directories to where the action is located and access other
+files in that same repository. For example,
+/home/runner/work/_actions/repo-owner/name-of-action-repo/v1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_action_repository" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_action_repository</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action_repository</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>For a step executing an action, this is the owner and repository name of the action.
+For example, actions/checkout.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_actions" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_actions</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actions</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Always set to true when GitHub Actions is running the workflow. You can use this variable
+to differentiate when tests are being run locally or by GitHub Actions.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_actor" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_actor</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actor</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the person or app that initiated the workflow. For example, octocat.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_actor_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_actor_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actor_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The account ID of the person or app that triggered the initial workflow run.
+For example, 1234567. Note that this is different from the actor username.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_api_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_api_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_api_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns the API URL. For example: https://api.github.com.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_base_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_base_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_base_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the base ref or target branch of the pull request in a workflow run.
+This is only set when the event that triggers a workflow run is either pull_request or
+pull_request_target. For example, main.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_env" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_env</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_env</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets variables from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/set_env_87406d6e-4979-4d42-98e1-3dab1f48b13a.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_event_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_event_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_event_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the event that triggered the workflow. For example, workflow_dispatch.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_event_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_event_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_event_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to the file on the runner that contains the full event webhook payload.
+For example, /github/workflow/event.json.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_graphql_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_graphql_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_graphql_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns the GraphQL API URL. For example: https://api.github.com/graphql.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_head_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_head_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_head_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The head ref or source branch of the pull request in a workflow run. This property is only
+set when the event that triggers a workflow run is either pull_request or pull_request_target.
+For example, feature-branch-1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_job" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_job</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_job</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The job_id of the current job. For example, greeting_job.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_output" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_output</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_output</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets the current step's outputs from
+workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/set_output_a50ef383-b063-46d9-9157-57953fc9f3f0.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets system PATH variables from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/add_path_899b9445-ad4a-400c-aa89-249f18632cf5.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The fully-formed ref of the branch or tag that triggered the workflow run. For workflows
+triggered by push, this is the branch or tag ref that was pushed. For workflows triggered by
+pull_request, this is the pull request merge branch. For workflows triggered by release,
+this is the release tag created. For other triggers, this is the branch or tag ref that
+triggered the workflow run. This is only set if a branch or tag is available for the
+event type. The ref given is fully-formed, meaning that for branches the format is
+refs/heads/<branch_name>, for pull requests it is refs/pull/<pr_number>/merge,
+and for tags it is refs/tags/<tag_name>. For example, refs/heads/feature-branch-1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_ref_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_ref_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The short ref name of the branch or tag that triggered the workflow run. This value matches
+the branch or tag name shown on GitHub. For example, feature-branch-1.
+For pull requests, the format is <pr_number>/merge.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_ref_protected" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_ref_protected</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_protected</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>true if branch protections or rulesets are configured for the ref that triggered the
+workflow run.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_ref_type" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_ref_type</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_type</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The type of ref that triggered the workflow run. Valid values are branch or tag.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_repository" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_repository</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The owner and repository name. For example, octocat/Hello-World.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_repository_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_repository_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The ID of the repository. For example, 123456789. Note that this is different from the
+repository name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_repository_owner" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_repository_owner</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_owner</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The repository owner's name. For example, octocat.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_repository_owner_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_repository_owner_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_owner_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The repository owner's account ID. For example, 1234567. Note that this is different
+from the owner's name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_retention_days" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_retention_days</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_retention_days</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The number of days that workflow run logs and artifacts are kept. For example, 90.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_run_attempt" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_run_attempt</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_attempt</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each attempt of a particular workflow run in a repository. This number
+begins at 1 for the workflow run's first attempt, and increments with each re-run.
+For example, 3.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_run_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_run_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each workflow run within a repository. This number does not change if
+you re-run the workflow run. For example, 1658821493.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_run_number" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_run_number</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_number</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each run of a particular workflow in a repository. This number begins
+at 1 for the workflow's first run, and increments with each new run. This number does not
+change if you re-run the workflow run. For example, 3.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_server_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_server_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_server_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The URL of the GitHub server. For example: https://github.com.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_sha" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_sha</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_sha</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The commit SHA that triggered the workflow. The value of this commit SHA depends on the
+event that triggered the workflow. For more information, see "Events that trigger workflows."
+For example, ffac537e6cbbf934b08745a378932722df287a53.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_step_summary" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_step_summary</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_step_summary</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that contains job summaries from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/_layout/_work/_temp/_runner_file_commands/step_summary_1cb22d7f-5663-41a8-
+9ffc-13472605c76c. For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_triggering_actor" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_triggering_actor</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_triggering_actor</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The username of the user that initiated the workflow run. If the workflow run is a re-run,
+this value may differ from github.actor. Any workflow re-runs will use the privileges of
+github.actor, even if the actor initiating the re-run (github.triggering_actor) has different
+privileges.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_workflow" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_workflow</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the workflow. For example, My test workflow. If the workflow file doesn't specify
+a name, the value of this variable is the full path of the workflow file in the repository.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_workflow_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_workflow_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The ref path to the workflow. For example,
+octocat/hello-world/.github/workflows/my-workflow.yml@
+refs/heads/my_branch.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_workflow_sha" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_workflow_sha</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow_sha</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The commit SHA for the workflow file.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.github_workspace" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.github_workspace</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workspace</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The default working directory on the runner for steps, and the default location of your
+repository when using the checkout action. For example,
+/home/runner/work/my-repo-name/my-repo-name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_arch" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_arch</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_arch</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The architecture of the runner executing the job. Possible values are X86, X64, ARM,
+or ARM64.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_debug" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_debug</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_debug</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>This is set only if debug logging is enabled, and always has the value of 1. It can be useful
+as an indicator to enable additional debugging or verbose logging in your own job steps.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the runner executing the job. This name may not be unique in a workflow run as
+runners at the repository and organization levels could use the same name.
+For example, Hosted Agent</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_os" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_os</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_os</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The operating system of the runner executing the job. Possible values are Linux, Windows,
+or macOS.
+For example, Windows</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_temp" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_temp</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_temp</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to a temporary directory on the runner. This directory is emptied at the beginning
+and end of each job. Note that files will not be removed if the runner's user account does
+not have permission to delete them. For example, D:\a_temp</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.GithubVars.runner_tool_cache" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.GithubVars.runner_tool_cache</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_tool_cache</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to the directory containing preinstalled tools for GitHub-hosted runners.
+For more information, see "Using GitHub-hosted runners".
+For example, C:\hostedtoolcache\windows</p>
+    </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<h3 id="github_custom_actions-modules">Modules</h3>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.action_base" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.action_base</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h5 id="github_custom_actions.action_base-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.action_base.ActionBase" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.action_base.ActionBase</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Base class for GitHub Actions.</p>
+<p>You should implement <code>main()</code> method in the subclass.</p>
+<p>You can define custom inputs and / or outputs types in the subclass.
+You can do nothing in the subclass if you don't need typed inputs and outputs.</p>
+<p>Note these are just types, instances of these types are automatically created
+in the <code>__init__</code> method.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyInputs</span><span class="p">(</span><span class="n">ActionInputs</span><span class="p">):</span>
+    <span class="n">my_input</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;My input description&#39;&#39;&#39;</span>
+
+    <span class="n">my_path</span><span class="p">:</span> <span class="n">Path</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;My path description&#39;&#39;&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyOutputs</span><span class="p">(</span><span class="n">ActionOutputs</span><span class="p">):</span>
+    <span class="n">runner_os</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Runner OS description&#39;&#39;&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyAction</span><span class="p">(</span><span class="n">ActionBase</span><span class="p">):</span>
+    <span class="n">inputs</span><span class="p">:</span> <span class="n">MyInputs</span>
+    <span class="n">outputs</span><span class="p">:</span> <span class="n">MyOutputs</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;my-path is required&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">runner_os</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">runner_os</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span>
+                <span class="s2">&quot;### {{ inputs.my_input }}.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;Have a nice day, {{ inputs[&#39;name&#39;] }}!&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">MyAction</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h7 id="github_custom_actions.action_base.ActionBase-attributes">Attributes</h7>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.env" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.env</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">env</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.github_vars.GithubVars" href="#github_custom_actions.github_vars.GithubVars">GithubVars</a></span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.github_vars.GithubVars" href="#github_custom_actions.github_vars.GithubVars">GithubVars</a></span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.environment" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.environment</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">environment</span> <span class="o">=</span> <span class="n"><span title="jinja2.Environment">Environment</span></span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n"><span title="jinja2.FileSystemLoader">FileSystemLoader</span></span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">templates_dir</span><span class="p">)))</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.error_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.error_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">error_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.inputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.inputs</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">inputs</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.inputs_outputs.ActionInputs" href="#github_custom_actions.inputs_outputs.ActionInputs">ActionInputs</a></span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="s1">&#39;inputs&#39;</span><span class="p">]()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.notice_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.notice_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">notice_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;notice&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.outputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.outputs</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">outputs</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.inputs_outputs.ActionOutputs" href="#github_custom_actions.inputs_outputs.ActionOutputs">ActionOutputs</a></span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="s1">&#39;outputs&#39;</span><span class="p">]()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.summary" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.summary</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">summary</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.FileTextProperty" href="#github_custom_actions.action_base.FileTextProperty">FileTextProperty</a></span><span class="p">(</span><span class="s1">&#39;github_step_summary&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.warning_message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.ActionBase.warning_message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">warning_message</span> <span class="o">=</span> <span class="n"><span title="functools.partialmethod">partialmethod</span></span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.ActionBase.message" href="#github_custom_actions.action_base.ActionBase.message">message</a></span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<h7 id="github_custom_actions.action_base.ActionBase-functions">Functions</h7>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.debug" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.debug</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">debug</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">str</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Emits a debug message. The runner needs to be invoked with enabled debug
+logging to show these.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Action invoked.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.main" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.main</span>
+
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Business logic of the action.</p>
+<p>Is called by <code>run()</code> method.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.message" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.message</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">message</span><span class="p">(</span><span class="n">severity</span><span class="p">:</span> <span class="n"><span title="typing.Literal">Literal</span></span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;notice&#39;</span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span><span class="p">],</span> <span class="n">message</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_line</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_column</span><span class="p">:</span> <span class="n"><span title="typing.Optional">Optional</span></span><span class="p">[</span><span class="n">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Emits a message at the given <code>severity</code> level. The keyword arguments can be used
+to generate annotations that will be displayed within the Review section of a
+Pull Request. Refer to the messages related section in the
+<a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands">workflows commands reference</a>
+for semantic details.</p>
+<p>There are also the methods <code>error_message</code>, <code>notice_message</code> and
+<code>warning_message</code> as shortcuts.</p>
+<p>Example usages:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="s2">&quot;Deprecated input used: pattern&quot;</span><span class="p">)</span>
+<span class="c1"># or equivalently:</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">warning_message</span><span class="p">(</span><span class="s2">&quot;Deprecated input used: pattern&quot;</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">error_message</span><span class="p">(</span>
+    <span class="s2">&quot;Value exceeds limit.&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Schema error&quot;</span><span class="p">,</span>
+    <span class="n">file</span><span class="o">=</span><span class="s2">&quot;config.yml&quot;</span><span class="p">,</span>
+    <span class="n">line</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="n">column</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.render" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.render</span>
+
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">render</span><span class="p">(</span><span class="n">template</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Render the template from the string with Jinja.</p>
+<p><code>kwargs</code> are the template context variables.</p>
+<p>Also includes to the context the action's <code>inputs</code>, <code>outputs</code>, and <code>env</code>.</p>
+<p>So you can use something like:
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;### {{ inputs.name }}!</span><span class="se">\n</span><span class="s2">Have a nice day!&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.render_template" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.render_template</span>
+
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">render_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">:</span> <span class="n">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Render template from the <code>templates</code> directory.</p>
+<p><code>template_name</code> is the name of the template file without the extension.
+<code>kwargs</code> are the template context variables.</p>
+<p>Also includes to the context the action's <code>inputs</code>, <code>outputs</code>, and <code>env</code>.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;executor.json&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s2">&quot;ubuntu-latest&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.action_base.ActionBase.run" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.action_base.ActionBase.run</span>
+
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Run the action.</p>
+<p><code>run()</code> calls the <code>main()</code> method of the action with the necessary boilerplate to catch and
+report exceptions.</p>
+<p>Usage:
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">MyAction</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+<p><code>main()</code> is where you implement the business logic of your action.</p>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.action_base.FileTextProperty" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.action_base.FileTextProperty</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Property descriptor read / write from a file.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h7 id="github_custom_actions.action_base.FileTextProperty-attributes">Attributes</h7>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.action_base.FileTextProperty.var_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.action_base.FileTextProperty.var_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">var_name</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-internal" title="github_custom_actions.action_base.FileTextProperty.var_name" href="#github_custom_actions.action_base.FileTextProperty.var_name">var_name</a></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.attr_dict_vars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.attr_dict_vars</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h5 id="github_custom_actions.attr_dict_vars-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.attr_dict_vars.AttrDictVars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.attr_dict_vars.AttrDictVars</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Common base class for accessing variables as attributes or dict.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h7 id="github_custom_actions.attr_dict_vars.AttrDictVars-functions">Functions</h7>
+
+<div class="doc doc-object doc-function">
+
+
+<h8 id="github_custom_actions.attr_dict_vars.AttrDictVars.get_type_hints" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">github_custom_actions.attr_dict_vars.AttrDictVars.get_type_hints</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">get_type_hints</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><span title="typing.Dict">Dict</span></span><span class="p">[</span><span class="n">str</span><span class="p">,</span> <span class="n"><span title="typing.Any">Any</span></span><span class="p">]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.env_attr_dict_vars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.env_attr_dict_vars</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h5 id="github_custom_actions.env_attr_dict_vars-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.env_attr_dict_vars.EnvAttrDictVars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.env_attr_dict_vars.EnvAttrDictVars</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.attr_dict_vars.AttrDictVars" href="#github_custom_actions.attr_dict_vars.AttrDictVars">AttrDictVars</a></code></p>
+
+
+        <p>Dual access env vars.</p>
+<p>Access to env vars as object attributes or as dict items.
+Do not allow changing vars, so this is a read-only source of env vars values.</p>
+<p>With attributes, you can only access explicitly declared vars,
+with dict-like access you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Usage:
+   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyVars</span><span class="p">(</span><span class="n">EnvAttrDictVars</span><span class="p">):</span>
+    <span class="n">documented_var</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="nb">vars</span> <span class="o">=</span> <span class="n">MyVars</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;INPUT_&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="p">[</span><span class="s2">&quot;undocumented_var&quot;</span><span class="p">])</span>  <span class="c1"># from os.environ[&quot;INPUT_UNDOCUMENTED_VAR&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="o">.</span><span class="n">documented_var</span><span class="p">)</span>  <span class="c1"># from os.environ[&quot;INPUT_DOCUMENTED-VAR&quot;]</span>
+</code></pre></div></p>
+<p>Attribute names are converted with the method <code>_attr_to_var_name()</code> -
+it converts Python attribute
+names from snake_case to kebab-case.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.file_attr_dict_vars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.file_attr_dict_vars</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h5 id="github_custom_actions.file_attr_dict_vars-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.file_attr_dict_vars.FileAttrDictVars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.file_attr_dict_vars.FileAttrDictVars</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.attr_dict_vars.AttrDictVars" href="#github_custom_actions.attr_dict_vars.AttrDictVars">AttrDictVars</a></code>, <code><span title="collections.abc.MutableMapping">MutableMapping</span></code></p>
+
+
+        <p>Dual access vars in a file.</p>
+<p>File contains vars as <code>key=value</code> lines.
+Access with attributes or as dict.</p>
+<p>With attributes, you can only access explicitly declared vars,
+with dict-like access you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Usage:
+   class MyVars(FileAttrDictVars):
+       documented_var: str</p>
+<p>vars = MyVars(Path("my_vars.txt"))
+   vars["undocumented_var"] = "value1"
+   vars.documented_var == "value2"</p>
+<p># Produces "my_vars.txt" with:
+   #    documented-var=value2
+   #    undocumented_var=value1</p>
+<p>On read/write, it converts var names with <code>_name_from_external()</code>/<code>_external_name()</code> methods.
+They remove/add <code>_external_name_prefix</code> to the names.</p>
+<p>Attribute access also uses <code>_attr_to_var_name()</code> - by default it converts Python attribute names
+from snake_case to kebab-case.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.github_vars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.github_vars</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h5 id="github_custom_actions.github_vars-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.github_vars.GithubVars" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.github_vars.GithubVars</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.env_attr_dict_vars.EnvAttrDictVars" href="#github_custom_actions.env_attr_dict_vars.EnvAttrDictVars">EnvAttrDictVars</a></code></p>
+
+
+        <p>GitHub Action environment variables.</p>
+<p>https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables</p>
+<p>Usage:
+   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyAction</span><span class="p">:</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">GithubVars</span><span class="p">()</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">MyAction</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">github_repository</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Thanks to the docstrings your IDE will provide you with doc hints when
+you hover over the property.
+We do not load the attributes on the class init but do it Lazily.
+Once read, the value is stored in the instance dictionary and is not extracted from env anymore.</p>
+<p>Converts attribute names to uppercase.
+Leave dict-style names unchanged.</p>
+<p>Paths and files have type Path.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h7 id="github_custom_actions.github_vars.GithubVars-attributes">Attributes</h7>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.CI" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.CI</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">CI</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Always set to true.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_action" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_action</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the action currently running, or the id of a step.
+For example, for an action, __repo-owner_name-of-action-repo.
+GitHub removes special characters, and uses the name __run when the current step runs a script
+without an id. If you use the same script or action more than once in the same job, the name
+will include a suffix that consists of the sequence number preceded by an underscore. For
+example, the first script you run will have the name __run, and the second script will be
+named __run_2. Similarly, the second invocation of actions/checkout will be actionscheckout2.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_action_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_action_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path where an action is located. This property is only supported in composite actions.
+You can use this path to change directories to where the action is located and access other
+files in that same repository. For example,
+/home/runner/work/_actions/repo-owner/name-of-action-repo/v1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_action_repository" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_action_repository</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_action_repository</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>For a step executing an action, this is the owner and repository name of the action.
+For example, actions/checkout.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_actions" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_actions</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actions</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Always set to true when GitHub Actions is running the workflow. You can use this variable
+to differentiate when tests are being run locally or by GitHub Actions.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_actor" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_actor</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actor</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the person or app that initiated the workflow. For example, octocat.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_actor_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_actor_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_actor_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The account ID of the person or app that triggered the initial workflow run.
+For example, 1234567. Note that this is different from the actor username.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_api_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_api_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_api_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns the API URL. For example: https://api.github.com.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_base_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_base_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_base_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the base ref or target branch of the pull request in a workflow run.
+This is only set when the event that triggers a workflow run is either pull_request or
+pull_request_target. For example, main.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_env" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_env</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_env</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets variables from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/set_env_87406d6e-4979-4d42-98e1-3dab1f48b13a.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_event_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_event_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_event_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the event that triggered the workflow. For example, workflow_dispatch.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_event_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_event_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_event_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to the file on the runner that contains the full event webhook payload.
+For example, /github/workflow/event.json.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_graphql_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_graphql_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_graphql_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns the GraphQL API URL. For example: https://api.github.com/graphql.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_head_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_head_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_head_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The head ref or source branch of the pull request in a workflow run. This property is only
+set when the event that triggers a workflow run is either pull_request or pull_request_target.
+For example, feature-branch-1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_job" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_job</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_job</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The job_id of the current job. For example, greeting_job.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_output" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_output</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_output</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets the current step's outputs from
+workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/set_output_a50ef383-b063-46d9-9157-57953fc9f3f0.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_path</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_path</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that sets system PATH variables from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/work/_temp/_runner_file_commands/add_path_899b9445-ad4a-400c-aa89-249f18632cf5.
+For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The fully-formed ref of the branch or tag that triggered the workflow run. For workflows
+triggered by push, this is the branch or tag ref that was pushed. For workflows triggered by
+pull_request, this is the pull request merge branch. For workflows triggered by release,
+this is the release tag created. For other triggers, this is the branch or tag ref that
+triggered the workflow run. This is only set if a branch or tag is available for the
+event type. The ref given is fully-formed, meaning that for branches the format is
+refs/heads/<branch_name>, for pull requests it is refs/pull/<pr_number>/merge,
+and for tags it is refs/tags/<tag_name>. For example, refs/heads/feature-branch-1.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_ref_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_ref_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The short ref name of the branch or tag that triggered the workflow run. This value matches
+the branch or tag name shown on GitHub. For example, feature-branch-1.
+For pull requests, the format is <pr_number>/merge.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_ref_protected" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_ref_protected</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_protected</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>true if branch protections or rulesets are configured for the ref that triggered the
+workflow run.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_ref_type" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_ref_type</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_ref_type</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The type of ref that triggered the workflow run. Valid values are branch or tag.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_repository" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_repository</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The owner and repository name. For example, octocat/Hello-World.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_repository_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_repository_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The ID of the repository. For example, 123456789. Note that this is different from the
+repository name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_repository_owner" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_repository_owner</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_owner</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The repository owner's name. For example, octocat.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_repository_owner_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_repository_owner_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_repository_owner_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The repository owner's account ID. For example, 1234567. Note that this is different
+from the owner's name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_retention_days" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_retention_days</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_retention_days</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The number of days that workflow run logs and artifacts are kept. For example, 90.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_run_attempt" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_run_attempt</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_attempt</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each attempt of a particular workflow run in a repository. This number
+begins at 1 for the workflow run's first attempt, and increments with each re-run.
+For example, 3.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_run_id" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_run_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_id</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each workflow run within a repository. This number does not change if
+you re-run the workflow run. For example, 1658821493.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_run_number" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_run_number</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_run_number</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>A unique number for each run of a particular workflow in a repository. This number begins
+at 1 for the workflow's first run, and increments with each new run. This number does not
+change if you re-run the workflow run. For example, 3.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_server_url" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_server_url</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_server_url</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The URL of the GitHub server. For example: https://github.com.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_sha" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_sha</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_sha</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The commit SHA that triggered the workflow. The value of this commit SHA depends on the
+event that triggered the workflow. For more information, see "Events that trigger workflows."
+For example, ffac537e6cbbf934b08745a378932722df287a53.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_step_summary" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_step_summary</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_step_summary</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path on the runner to the file that contains job summaries from workflow commands.
+This file is unique to the current step and changes for each step in a job.
+For example,
+/home/runner/_layout/_work/_temp/_runner_file_commands/step_summary_1cb22d7f-5663-41a8-
+9ffc-13472605c76c. For more information, see "Workflow commands for GitHub Actions".</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_triggering_actor" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_triggering_actor</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_triggering_actor</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The username of the user that initiated the workflow run. If the workflow run is a re-run,
+this value may differ from github.actor. Any workflow re-runs will use the privileges of
+github.actor, even if the actor initiating the re-run (github.triggering_actor) has different
+privileges.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_workflow" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_workflow</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the workflow. For example, My test workflow. If the workflow file doesn't specify
+a name, the value of this variable is the full path of the workflow file in the repository.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_workflow_ref" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_workflow_ref</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow_ref</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The ref path to the workflow. For example,
+octocat/hello-world/.github/workflows/my-workflow.yml@
+refs/heads/my_branch.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_workflow_sha" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_workflow_sha</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workflow_sha</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The commit SHA for the workflow file.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.github_workspace" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.github_workspace</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">github_workspace</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The default working directory on the runner for steps, and the default location of your
+repository when using the checkout action. For example,
+/home/runner/work/my-repo-name/my-repo-name.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_arch" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_arch</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_arch</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The architecture of the runner executing the job. Possible values are X86, X64, ARM,
+or ARM64.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_debug" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_debug</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_debug</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>This is set only if debug logging is enabled, and always has the value of 1. It can be useful
+as an indicator to enable additional debugging or verbose logging in your own job steps.</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_name" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_name</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_name</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The name of the runner executing the job. This name may not be unique in a workflow run as
+runners at the repository and organization levels could use the same name.
+For example, Hosted Agent</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_os" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_os</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_os</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The operating system of the runner executing the job. Possible values are Linux, Windows,
+or macOS.
+For example, Windows</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_temp" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_temp</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_temp</span><span class="p">:</span> <span class="n"><span title="pathlib.Path">Path</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to a temporary directory on the runner. This directory is emptied at the beginning
+and end of each job. Note that files will not be removed if the runner's user account does
+not have permission to delete them. For example, D:\a_temp</p>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h8 id="github_custom_actions.github_vars.GithubVars.runner_tool_cache" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.github_vars.GithubVars.runner_tool_cache</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h8>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">runner_tool_cache</span><span class="p">:</span> <span class="n">str</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The path to the directory containing preinstalled tools for GitHub-hosted runners.
+For more information, see "Using GitHub-hosted runners".
+For example, C:\hostedtoolcache\windows</p>
+    </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h4 id="github_custom_actions.inputs_outputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">github_custom_actions.inputs_outputs</span>
+
+
+</h4>
+
+    <div class="doc doc-contents ">
+
+        <p>Github Actions helper functions.</p>
+<p>We want to support Python 3.7 that you still have on some self-hosted action runners.
+So no fancy features like walrus operator, @cached_property, etc.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h5 id="github_custom_actions.inputs_outputs-attributes">Attributes</h5>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="github_custom_actions.inputs_outputs.INPUT_PREFIX" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">github_custom_actions.inputs_outputs.INPUT_PREFIX</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h6>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">INPUT_PREFIX</span> <span class="o">=</span> <span class="s1">&#39;INPUT_&#39;</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+<h5 id="github_custom_actions.inputs_outputs-classes">Classes</h5>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.inputs_outputs.ActionInputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.inputs_outputs.ActionInputs</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.env_attr_dict_vars.EnvAttrDictVars" href="#github_custom_actions.env_attr_dict_vars.EnvAttrDictVars">EnvAttrDictVars</a></code></p>
+
+
+        <p>GitHub Action input variables.</p>
+<p>Usage:
+    <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyInputs</span><span class="p">(</span><span class="n">ActionInputs</span><span class="p">):</span>
+    <span class="n">my_input</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">ActionBase</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">MyInputs</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">my_input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;my-input&quot;</span><span class="p">])</span>  <span class="c1"># the same as above</span>
+</code></pre></div></p>
+<p>With attributes, you can only access explicitly declared vars, with dict-like access
+you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Attribute names are converted to <code>kebab-case</code>.
+So <code>action.inputs.my_input</code> is the same as <code>action.inputs["my-input"]</code>.</p>
+<p>If you need to access a <code>snake_case</code> named input <code>my_input</code>, you should
+use dict-style only: <code>action.inputs["my_input"]</code>.
+But it's common to use <code>kebab-case</code> in GitHub Actions input names.</p>
+<p>By GitHub convention, all input names are upper-cased in the environment
+and prefixed with "INPUT_".
+So <code>actions.inputs.my_input</code> or <code>actions.inputs['my-input']</code> will be the variable
+<code>INPUT_MY-INPUT</code> in the environment.
+The ActionInputs does the conversion automatically.</p>
+<p>Uses lazy loading of the values.
+So the value is read from the environment only when accessed and only once,
+and saved in the object's internal dict.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h6 id="github_custom_actions.inputs_outputs.ActionOutputs" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">github_custom_actions.inputs_outputs.ActionOutputs</span>
+
+
+</h6>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="github_custom_actions.file_attr_dict_vars.FileAttrDictVars" href="#github_custom_actions.file_attr_dict_vars.FileAttrDictVars">FileAttrDictVars</a></code></p>
+
+
+        <p>GitHub Actions output variables.</p>
+<p>Usage:
+   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyOutputs</span><span class="p">(</span><span class="n">ActionOutputs</span><span class="p">):</span>
+    <span class="n">my_output</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">action</span> <span class="o">=</span> <span class="n">ActionBase</span><span class="p">(</span><span class="n">outputs</span><span class="o">=</span><span class="n">MyOutputs</span><span class="p">())</span>
+<span class="n">action</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;my-output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>
+<span class="n">action</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">my_output</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>  <span class="c1"># the same as above</span>
+</code></pre></div></p>
+<p>With attributes, you can only access explicitly declared vars,
+with dict-like access you can access any var.
+This way you can find your balance between strictly defined vars and flexibility.</p>
+<p>Attribute names are converted to <code>kebab-case</code>.
+So <code>action.outputs.my_output</code> is the same as <code>action.outputs["my-output"]</code>.</p>
+<p>If you need to access a <code>snake_case</code> named output like <code>my_output</code> you should
+use dict-style only: <code>action.outputs["my_output"]</code>.
+But it's common to use <code>kebab-case</code> in GitHub Actions output names.</p>
+<p>Each output var assignment changes the GitHub outputs file
+(the path is defined as <code>action.env.github_output</code>).</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["toc.integrate", "navigation.tracking", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
