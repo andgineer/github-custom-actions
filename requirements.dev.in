@@ -6,8 +6,7 @@ pytest-cov
 
 # lint
 pre-commit
-mypy
-pylint
+pyrefly
 
 
 # docs

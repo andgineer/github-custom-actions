@@ -17,15 +17,15 @@ class MyOutputs(ActionOutputs):
 
 
 class MyAction(ActionBase):
-    inputs: MyInputs
-    outputs: MyOutputs
+    inputs: MyInputs  # type: ignore[assignment]
+    outputs: MyOutputs  # type: ignore[assignment]
 
     def main(self):
         if self.inputs.my_path is None:
             raise ValueError("my-path is required")
         self.inputs.my_path.mkdir(exist_ok=True)
         self.outputs.runner_os = self.env.runner_os
-        self.summary.text += self.render(
+        self.summary += self.render(
             "### {{ inputs.my_input }}.\nHave a nice day, {{ inputs['name'] }}!",
         )
 

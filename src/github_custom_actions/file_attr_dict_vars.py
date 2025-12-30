@@ -39,7 +39,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
         """Init the vars file and prefix."""
         self._external_name_prefix = prefix
         self._vars_file: Path = vars_file
-        self._var_keys_cache: Optional[Dict[str, str]] = None
+        self._var_keys_cache: Optional[Dict[str, Any]] = None
 
     def _external_name(self, name: str) -> str:
         """Convert variable name to the external form."""
@@ -61,7 +61,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
                 return value
             raise AttributeError(f"Unknown {name}") from exc
 
-    def __getitem__(self, key: str) -> str:
+    def __getitem__(self, key: str) -> Any:
         try:
             return self._get_var_keys[key]
         except KeyError:
@@ -70,12 +70,13 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
             print(f"Variable `{key}` not found in `{self._vars_file}`")
             return ""
 
-    def __setitem__(self, key: str, value: str) -> None:
+    def __setitem__(self, key: str, value: Any) -> None:
         """Access dict-style.
 
         vars["key"] = "value"
         """
-        if "\n" in value or "\r" in value:
+        value_str = str(value)
+        if "\n" in value_str or "\r" in value_str:
             raise ValueError(
                 "GitHub outputs must be single-line strings; "
                 f"value for '{key}' contains newline characters.",
@@ -110,7 +111,7 @@ class FileAttrDictVars(AttrDictVars, MutableMapping):  # type: ignore
         return key in self._get_var_keys
 
     @property
-    def _get_var_keys(self) -> Dict[str, str]:
+    def _get_var_keys(self) -> Dict[str, Any]:
         """Load key-value pairs from a file, returning {} if the file does not exist."""
         if self._var_keys_cache is None:
             try:

@@ -25,7 +25,7 @@ it in the action [step summary](summary) on the GitHub build summary.
 
 It also returns a value to the `runner-os` [action output](outputs).
 
-> **Note:** Output values cannot contain newlines. If you need them
+> **Note:** String representations of the outputs cannot contain newlines. If you need them
 > encode the values (JSON/base64/etc) before writing.
 
 The `run()` in the main block runs the [main()](main) that implements your action.

@@ -4,7 +4,7 @@ from github_custom_actions import ActionBase
 class MyAction(ActionBase):
     def main(self):
         self.outputs["runner-os"] = self.env.runner_os
-        self.summary.text += self.render(
+        self.summary += self.render(
             "### {{ inputs['my-input'] }}.\nHave a nice day!",
         )
 

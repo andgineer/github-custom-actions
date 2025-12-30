@@ -20,7 +20,7 @@ permissions:
 jobs:
   deploy:
     env:
-      PRIMARY_PYTHON_VERSION: '3.8'
+      PRIMARY_PYTHON_VERSION: '3.12'
     runs-on: ubuntu-latest
     concurrency:
       group: github-pages
