@@ -16,21 +16,21 @@ deepmerge==2.0
     # via zensical
 distlib==0.4.0
     # via virtualenv
-filelock==3.29.0
+filelock==3.16.1
     # via
     #   python-discovery
     #   virtualenv
 ghp-import==2.1.0
     # via mkdocs
-griffelib==2.0.2
+griffe==1.4.0
     # via mkdocstrings-python
-hatchling==1.29.0
+hatchling==1.27.0
     # via -r requirements.dev.in
-identify==2.6.19
+identify==2.6.1
     # via pre-commit
-iniconfig==2.3.0
+iniconfig==2.1.0
     # via pytest
-invoke==3.0.3
+invoke==2.2.1
     # via -r requirements.dev.in
 jinja2==3.1.6
     # via
@@ -39,14 +39,14 @@ jinja2==3.1.6
     #   mkdocs
     #   mkdocstrings
     #   zensical
-markdown==3.10.2
+markdown==3.7
     # via
     #   mkdocs
     #   mkdocs-autorefs
     #   mkdocstrings
     #   pymdown-extensions
     #   zensical
-markupsafe==3.0.3
+markupsafe==2.1.5
     # via
     #   -r requirements.txt
     #   jinja2
@@ -62,19 +62,19 @@ mkdocs==1.6.1
     #   mkdocs-autorefs
     #   mkdocs-awesome-pages-plugin
     #   mkdocstrings
-mkdocs-autorefs==1.4.4
+mkdocs-autorefs==1.2.0
     # via
     #   mkdocstrings
     #   mkdocstrings-python
 mkdocs-awesome-pages-plugin==2.10.1
     # via -r requirements.dev.in
-mkdocs-get-deps==0.2.2
+mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocstrings==1.0.4
+mkdocstrings==0.26.1
     # via
     #   -r requirements.dev.in
     #   mkdocstrings-python
-mkdocstrings-python==2.0.3
+mkdocstrings-python==1.11.1
     # via mkdocstrings
 natsort==8.4.0
     # via mkdocs-awesome-pages-plugin
@@ -85,38 +85,38 @@ packaging==26.2
     #   hatchling
     #   mkdocs
     #   pytest
-pathspec==1.1.1
+pathspec==0.12.1
     # via
     #   hatchling
     #   mkdocs
-platformdirs==4.9.6
+platformdirs==4.3.6
     # via
     #   mkdocs-get-deps
     #   python-discovery
     #   virtualenv
-pluggy==1.6.0
+pluggy==1.5.0
     # via
     #   hatchling
     #   pytest
     #   pytest-cov
-pre-commit==4.6.0
+pre-commit==3.5.0
     # via -r requirements.dev.in
-pygments==2.20.0
+pygments==2.19.2
     # via
     #   pytest
     #   zensical
-pymdown-extensions==10.21.3
+pymdown-extensions==10.15
     # via
     #   -r requirements.dev.in
     #   mkdocstrings
     #   zensical
 pyrefly==1.0.0
     # via -r requirements.dev.in
-pytest==9.0.3
+pytest==8.3.5
     # via
     #   -r requirements.dev.in
     #   pytest-cov
-pytest-cov==7.1.0
+pytest-cov==5.0.0
     # via -r requirements.dev.in
 python-dateutil==2.9.0.post0
     # via ghp-import
@@ -130,7 +130,7 @@ pyyaml==6.0.3
     #   pymdown-extensions
     #   pyyaml-env-tag
     #   zensical
-pyyaml-env-tag==1.1
+pyyaml-env-tag==0.1
     # via mkdocs
 six==1.17.0
     # via python-dateutil
@@ -140,11 +140,9 @@ tomli==2.4.1
     # via zensical
 trove-classifiers==2026.5.7.17
     # via hatchling
-virtualenv==21.3.3
+virtualenv==20.35.4
     # via pre-commit
-watchdog==6.0.0
+watchdog==4.0.2
     # via mkdocs
-wcmatch==10.1
+wcmatch==10.0
     # via mkdocs-awesome-pages-plugin
-zensical==0.0.41
-    # via -r requirements.dev.in
