@@ -1,6 +1,7 @@
 -r requirements.txt
 
 # pin Python 3.8 dependencies
+bracex==2.5.post1
 cfgv==3.4.0
 click==8.1.8
 

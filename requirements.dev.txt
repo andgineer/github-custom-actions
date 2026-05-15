@@ -2,7 +2,7 @@
 #    uv pip compile requirements.dev.in --output-file=requirements.dev.txt
 -e .
     # via -r requirements.dev.in
-bracex==2.6
+bracex==2.5.post1
     # via wcmatch
 cfgv==3.4.0
     # via pre-commit
