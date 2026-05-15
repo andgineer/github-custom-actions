@@ -16,7 +16,7 @@ name = "Andrey Sorokin"
 email = "andrey@sorokin.engineer"
 
 [project.license]
-file = "LICENSE.txt"
+file = "LICENSE"
 
 [project.urls]
 Homepage = "https://andgineer.github.io/github-custom-actions/"
@@ -32,7 +32,7 @@ line-length = 99
 "" = "src"
 
 [tool.setuptools.manifest]
-include = [ "README.md", "LICENSE.txt",]
+include = [ "README.md", "LICENSE",]
 
 [tool.hatch.version]
 path = "src/github_custom_actions/__about__.py"

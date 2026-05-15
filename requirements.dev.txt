@@ -4,7 +4,7 @@
     # via -r requirements.dev.in
 bracex==2.6
     # via wcmatch
-cfgv==3.5.0
+cfgv==3.4.0
     # via pre-commit
 click==8.3.3
     # via
