@@ -1,5 +1,9 @@
 -r requirements.txt
 
+# pin Python 3.8 dependencies
+cfgv==3.4.0
+click==8.1.8
+
 # test
 pytest
 pytest-cov

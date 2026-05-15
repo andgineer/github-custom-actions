@@ -6,7 +6,7 @@ bracex==2.6
     # via wcmatch
 cfgv==3.4.0
     # via pre-commit
-click==8.3.3
+click==8.1.8
     # via
     #   mkdocs
     #   zensical
