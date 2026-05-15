@@ -44,6 +44,7 @@ jobs:
       - name: Install dependencies
         run: |
           uv pip install ghp-import zensical -r pyproject.toml --group dev --python=${{ env.PRIMARY_PYTHON_VERSION }}
+          uv pip install -e .
 
       - name: Build documentation
         run: inv build-docs

@@ -47,7 +47,7 @@ jobs:
       uses: andgineer/uv-venv@v3
     - name: Install dependencies
       run: |
-        uv pip install -r pyproject.toml --group dev --python=${{ env.PRIMARY_PYTHON_VERSION }}
+        uv pip install -r pyproject.toml --group dev --python=${{ matrix.python-version }}
         uv pip install -e .
 
     - name: Test with pytest
