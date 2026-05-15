@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/installation/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/base/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/inputs/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/outputs/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/github_env_vars/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/main/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/summary/</loc>
+      </url>
+      <url>
+        <loc>https://andgineer.github.io/github-custom-actions/render/</loc>
+      </url>
+</urlset>
