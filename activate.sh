@@ -41,7 +41,8 @@ if [[ ! -d ${VENV_FOLDER} ]] ; then
         if uv venv ${VENV_FOLDER} --python=python${PRIMARY_PYTHON_VERSION}; then
             . ${VENV_FOLDER}/bin/activate
             uv pip install --upgrade pip
-            uv pip install -r requirements.dev.txt
+            # sensical need at least Python 3.10 but we want to keep CI env compatibility with Python 3.8
+            uv pip install zensical -r requirements.dev.txt
 
             END_TIME=$(date +%s)
             echo "Environment created in $((END_TIME - $START_TIME)) seconds"

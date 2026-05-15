@@ -43,7 +43,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install ghp-import -r requirements.dev.txt --python=${{ env.PRIMARY_PYTHON_VERSION }}
+          uv pip install ghp-import zensical -r requirements.dev.txt --python=${{ env.PRIMARY_PYTHON_VERSION }}
 
       - name: Build documentation
         run: inv build-docs
