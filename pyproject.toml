@@ -36,3 +36,16 @@ include = [ "README.md", "LICENSE",]
 
 [tool.hatch.version]
 path = "src/github_custom_actions/__about__.py"
+
+[dependency-groups]
+dev = [
+    "hatchling>=1.27.0",
+    "invoke>=2.2.1",
+    "mkdocs-awesome-pages-plugin>=2.9.2",
+    "mkdocstrings[python]>=0.26.1",
+    "pre-commit>=3.5.0",
+    "pymdown-extensions>=10.15",
+    "pyrefly>=1.0.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=5.0.0",
+]

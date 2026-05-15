@@ -1,5 +1,4 @@
 import shutil
-import subprocess
 import sys
 from contextlib import contextmanager
 from pathlib import Path
@@ -39,27 +38,6 @@ def ver_task_factory(version_type: str):
         c.run(f"./scripts/verup.sh {version_type}")
 
     return ver
-
-
-@task
-def compile_requirements(c: Context):
-    "Convert requirements.in to requirements.txt and requirements.dev.txt."
-    start_time = subprocess.check_output(["date", "+%s"]).decode().strip()
-    c.run("uv pip compile requirements.in --output-file=requirements.txt --upgrade")
-    reqs_time = subprocess.check_output(["date", "+%s"]).decode().strip()
-    c.run("uv pip compile requirements.dev.in --output-file=requirements.dev.txt --upgrade")
-    end_time = subprocess.check_output(["date", "+%s"]).decode().strip()
-    print(f"Req's compilation time: {int(reqs_time) - int(start_time)} seconds")
-    print(f"Req's dev compilation time: {int(end_time) - int(reqs_time)} seconds")
-    print(f"Total execution time: {int(end_time) - int(start_time)} seconds")
-
-    c.run("scripts/include_pyproject_requirements.py requirements.in")
-
-
-@task(pre=[compile_requirements])
-def reqs(c: Context):
-    """Upgrade requirements including pre-commit."""
-    c.run("pip install -r requirements.dev.txt")
 
 
 @contextmanager
