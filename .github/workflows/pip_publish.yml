@@ -49,7 +49,7 @@ jobs:
     if: needs.check_tag.outputs.has_tag == 'true'
     env:
       RELEASE_VERSION: ${{ needs.check_tag.outputs.version_tag }}
-      PRIMARY_PYTHON_VERSION: '3.12'
+      PRIMARY_PYTHON_VERSION: '3.13'
     runs-on: ubuntu-latest
 
     steps:
