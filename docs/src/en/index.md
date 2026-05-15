@@ -4,7 +4,7 @@ Python package for creating [custom GitHub Actions](https://docs.github.com/en/a
 
 [How to Create Your Own GitHub Action in 5 Minutes](https://sorokin.engineer/posts/en/github-custom-actions.html).
 
-The package works with Python 3.9 and up, so even those dusty old self-hosted action runners can
+The package works with Python 3.10 and up, so even those dusty old self-hosted action runners can
 handle it like champs.
 
 ### Quick start
