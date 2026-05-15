@@ -21,4 +21,4 @@ So `action.env["GITHUB_REPOSITORY"]` and `action.env.github_repository` refer to
 
 This way with dictionary-like syntax you can access to any environment variable, not only set by Github.
 
-For implementation details, see [GithubVars][github_custom_actions.GithubVars].
+For implementation details, see [GithubVars](reference.md#github_custom_actions.GithubVars).

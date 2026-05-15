@@ -1,13 +1,13 @@
-[Базовый класс][github_custom_actions.ActionBase] для GitHub Action.
+[Базовый класс](reference.md#github_custom_actions.ActionBase) для GitHub Action.
 
 `ActionBase` также предоставляет вспомогательные методы для вывода стандартных GitHub workflow
 команд. С помощью `debug(message: str)` можно писать диагностические сообщения, которые появятся
 только при запуске job с включенным debug-логированием. Для аннотаций, которые должны отображаться
 в разделе “Files changed”, используйте
-[ActionBase.message()][github_custom_actions.ActionBase.message] или её варианты
-[error_message][github_custom_actions.ActionBase.error_message],
-[notice_message][github_custom_actions.ActionBase.notice_message] и
-[warning_message][github_custom_actions.ActionBase.warning_message], чтобы передать путь к файлу,
+[ActionBase.message()](reference.md#github_custom_actions.ActionBase.message) или её варианты
+[error_message](reference.md#github_custom_actions.ActionBase.error_message),
+[notice_message](reference.md#github_custom_actions.ActionBase.notice_message) и
+[warning_message](reference.md#github_custom_actions.ActionBase.warning_message), чтобы передать путь к файлу,
 строку и колонку:
 
 ```python
@@ -27,7 +27,7 @@ class MyAction(ActionBase):
 можно обратиться по ссылкам выше.
 
 В своем подклассе вы должны реализовать метод `main()` который вызывается из
-[run()][github_custom_actions.ActionBase.run].
+[run()](reference.md#github_custom_actions.ActionBase.run).
 
 Вы можете определить пользовательские типы входных и/или выходных данных в подклассе.
 Или вы можете ничего не делать в подклассе, если вам не нужны типизированные входные и выходные данные.

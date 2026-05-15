@@ -1,6 +1,6 @@
 Свойство summary в ActionBase реализует
-[FileTextProperty][github_custom_actions.action_base.FileTextProperty], связывая его с файлом,
-указанным в [Github Step Summary][github_custom_actions.GithubVars.github_step_summary].
+[FileTextProperty](reference.md#github_custom_actions.action_base.FileTextProperty), связывая его с файлом,
+указанным в [Github Step Summary](reference.md#github_custom_actions.GithubVars.github_step_summary).
 
 В этом файле ваше действие может возвращать markdown текст для включения в сводку шага.
 

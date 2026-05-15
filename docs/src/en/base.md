@@ -1,11 +1,11 @@
-The [ActionBase][github_custom_actions.ActionBase] base class also exposes helpers to emit the
+The [ActionBase](reference.md#github_custom_actions.ActionBase) base class also exposes helpers to emit the
 standard GitHub workflow log commands. Use `debug(message: str)` when you want to show extra
 information only when a workflow runs with debug logging enabled. For annotations that should show
 up in the PR “Files changed” view, call
-[ActionBase.message()][github_custom_actions.ActionBase.message] (or its convenience aliases
-[error_message][github_custom_actions.ActionBase.error_message],
-[notice_message][github_custom_actions.ActionBase.notice_message], and
-[warning_message][github_custom_actions.ActionBase.warning_message]) so you can attach file, line,
+[ActionBase.message()](reference.md#github_custom_actions.ActionBase.message) (or its convenience aliases
+[error_message](reference.md#github_custom_actions.ActionBase.error_message),
+[notice_message](reference.md#github_custom_actions.ActionBase.notice_message), and
+[warning_message](reference.md#github_custom_actions.ActionBase.warning_message)) so you can attach file, line,
 and column
 information:
 

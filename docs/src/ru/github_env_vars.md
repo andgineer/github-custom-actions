@@ -23,4 +23,4 @@
 
 Таким образом `action.env["GITHUB_REPOSITORY"]` и `action.env.github_repository` обращаются к одной и той же переменной.
 
-Для деталей реализации смотрите [GithubVars][github_custom_actions.GithubVars].
+Для деталей реализации смотрите [GithubVars](reference.md#github_custom_actions.GithubVars).

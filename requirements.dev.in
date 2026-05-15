@@ -11,7 +11,7 @@ pyrefly
 
 # docs
 mkdocstrings[python]
-mkdocs-material
+zensical
 pymdown-extensions
 mkdocs-awesome-pages-plugin
 

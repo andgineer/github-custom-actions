@@ -1,6 +1,6 @@
 `summary` property of [ActionBase](base.md) implements
-[FileTextProperty][github_custom_actions.action_base.FileTextProperty] connecting it to file
-specified in [Github Step Summary][github_custom_actions.GithubVars.github_step_summary].
+[FileTextProperty](reference.md#github_custom_actions.action_base.FileTextProperty) connecting it to file
+specified in [Github Step Summary](reference.md#github_custom_actions.GithubVars.github_step_summary).
 
 In this file your action can return some markdown to include in the summary of the step.
 

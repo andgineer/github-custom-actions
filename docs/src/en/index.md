@@ -13,9 +13,9 @@ handle it like champs.
 --8<-- "quick_start.py"
 ```
 
-This example uses the [runner_os][github_custom_actions.GithubVars.runner_os]
+This example uses the [runner_os](reference.md#github_custom_actions.GithubVars.runner_os)
 variable from
-[GitHub environment variables][github_custom_actions.GithubVars].
+[GitHub environment variables](reference.md#github_custom_actions.GithubVars).
 All variables from the GitHub environment are available in the `env`,
 with descriptions shown in your IDE on mouse hover:
 ![var_ide_hover_docstring.jpg](images/var_ide_hover_docstring.jpg)

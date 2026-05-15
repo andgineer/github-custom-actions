@@ -13,8 +13,8 @@
 --8<-- "quick_start.py"
 ```
 
-Этот пример использует переменную [runner_os][github_custom_actions.GithubVars.runner_os] из
-[переменных окружения GitHub][runner_os][github_custom_actions.GithubVars].
+Этот пример использует переменную [runner_os](reference.md#github_custom_actions.GithubVars.runner_os) из
+[переменных окружения GitHub](reference.md#github_custom_actions.GithubVars).
 
 Все переменные из окружения GitHub доступны в `env`,
 описания которых отображаются в вашей IDE при наведении мыши:
